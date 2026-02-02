@@ -1,3 +1,43 @@
+@font-face {
+  font-family: 'Doran';
+  src: url('./assets/fonts/Doran-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('./assets/fonts/Doran-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('./assets/fonts/Doran-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('./assets/fonts/Doran-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('./assets/fonts/Doran-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Updated Color Palette based on User Request */
   --color-primary: #921A25;
@@ -18,7 +58,7 @@
   --color-text-muted: #8B5E63;
   /* Softer maroon/brown for clear contrast */
 
-  --font-main: 'Outfit', sans-serif;
+  --font-main: 'Doran', 'Outfit', sans-serif;
 
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -90,7 +130,7 @@ img {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius-full);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   border: none;
   transition: var(--transition);
