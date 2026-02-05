@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="desktop-menu hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          {['Home', 'Services', 'Gallery', 'Contact'].map((item) => (
+          {['Home', 'Services', 'Feedbacks', 'Contact'].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -132,7 +132,7 @@ const Navbar = () => {
               zIndex: 1000
             }}
           >
-            {['Home', 'Services', 'Gallery', 'Contact'].map((item) => (
+            {['Home', 'Services', 'Feedbacks', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
