@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
+import { FaInstagram, FaBars, FaTimes, FaUser } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +26,14 @@ const Navbar = () => {
       document.body.style.overflow = 'unset';
     }
   }, [isOpen]);
+
+  const handleNavClick = (e, item) => {
+    setIsOpen(false);
+    if (!isHome) {
+      e.preventDefault();
+      navigate(`/#${item.toLowerCase()}`);
+    }
+  };
 
   return (
     <motion.nav
@@ -44,13 +56,34 @@ const Navbar = () => {
     >
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
-        {/* Logo */}
-        <a href="#home" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', zIndex: 1001, textDecoration: 'none' }}>
-          <img src="/benabazarlogo.png" alt="Bena Bazar" style={{ height: '40px', objectFit: 'contain' }} />
-          <h1 style={{ color: 'var(--color-primary)', fontWeight: 800, fontSize: '1.25rem' }}>
-            BENA <span style={{ color: 'var(--color-text)' }}>BAZAR</span>
-          </h1>
-        </a>
+        {/* Logo & Quick Login */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', zIndex: 1001, textDecoration: 'none' }}>
+            <img src="/benabazarlogo.png" alt="Bena Bazar" style={{ height: '40px', objectFit: 'contain' }} />
+            <h1 style={{ color: 'var(--color-primary)', fontWeight: 800, fontSize: '1.25rem' }}>
+              BENA <span style={{ color: 'var(--color-text)' }}>BAZAR</span>
+            </h1>
+          </Link>
+
+          <Link
+            to="/login"
+            style={{
+              background: 'rgba(146, 26, 37, 0.1)',
+              color: 'var(--color-primary)',
+              padding: '0.4rem 1rem',
+              borderRadius: '20px',
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              border: '1px solid rgba(146, 26, 37, 0.2)'
+            }}
+          >
+            <FaUser style={{ fontSize: '0.75rem' }} /> Login
+          </Link>
+        </div>
 
         {/* Desktop Menu */}
         <div className="desktop-menu hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
@@ -58,21 +91,45 @@ const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
+              onClick={(e) => handleNavClick(e, item)}
               style={{
                 color: 'var(--color-text)',
                 fontWeight: 600,
                 position: 'relative',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                cursor: 'pointer'
               }}
               className="nav-link"
             >
               {item}
             </a>
           ))}
+
+          {/* Instagram Button */}
           <a
             href="https://instagram.com/bena.bazar"
             target="_blank"
             rel="noopener noreferrer"
+            className="btn-outline"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.5rem 1rem',
+              borderRadius: '9999px',
+              border: '1px solid var(--color-primary)',
+              color: 'var(--color-primary)',
+              textDecoration: 'none',
+              fontSize: '0.9rem',
+              fontWeight: 600
+            }}
+          >
+            <FaInstagram /> Insta
+          </a>
+
+          {/* Login Button */}
+          <Link
+            to="/login"
             className="btn-primary"
             style={{
               display: 'flex',
@@ -84,11 +141,12 @@ const Navbar = () => {
               color: 'white',
               border: 'none',
               fontSize: '0.9rem',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              textDecoration: 'none'
             }}
           >
-            <FaInstagram /> Follow Us
-          </a>
+            <FaUser style={{ fontSize: '0.8rem' }} /> Login
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -136,7 +194,7 @@ const Navbar = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleNavClick(e, item)}
                 style={{
                   color: 'var(--color-text)',
                   fontSize: '2rem',
@@ -146,15 +204,44 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
-            <a
-              href="https://instagram.com/bena.bazar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-              style={{ fontSize: '1.2rem', marginTop: '1rem' }}
-            >
-              <FaInstagram style={{ marginRight: '8px' }} /> Follow Us
-            </a>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', marginTop: '1rem' }}>
+              <Link
+                to="/login"
+                onClick={() => setIsOpen(false)}
+                className="btn btn-primary"
+                style={{
+                  fontSize: '1.2rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  minWidth: '200px',
+                  justifyContent: 'center'
+                }}
+              >
+                <FaUser /> Login
+              </Link>
+
+              <a
+                href="https://instagram.com/bena.bazar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+                style={{
+                  fontSize: '1.2rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  minWidth: '200px',
+                  justifyContent: 'center',
+                  background: 'transparent',
+                  border: '2px solid var(--color-primary)',
+                  color: 'var(--color-primary)'
+                }}
+              >
+                <FaInstagram /> Follow Us
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -171,3 +258,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
