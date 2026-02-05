@@ -69,7 +69,6 @@ const Login = () => {
                         color: 'var(--color-text)',
                         marginBottom: '2rem',
                         fontSize: '1.8rem', // Kurdish Font Size
-                        fontFamily: 'Tahoma, Arial'
                     }}>
                         بەم زووانە
                     </h2>
@@ -79,7 +78,7 @@ const Login = () => {
                             We are building a simple e-commerce store for you. <br />
                             Soon you will be able to <strong>Login</strong> and order anything directly.
                         </p>
-                        <p style={{ fontSize: '1.1rem', direction: 'rtl', fontFamily: 'Tahoma, Arial' }}>
+                        <p style={{ fontSize: '1.1rem', direction: 'rtl' }}>
                             خەریکی دروستکردنی فرۆشگایەکی ئۆنلاینین بۆ ئێوەی ئازیز.<br />
                             بەم زووانە دەتوانن <strong>داخل بن</strong> و هەر شتێکتان ئەوێت بیکڕن.
                         </p>
@@ -96,12 +95,12 @@ const Login = () => {
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
                             <FaTruck style={{ fontSize: '1.5rem', color: 'var(--color-secondary)' }} />
                             <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Cash on Delivery</span>
-                            <span style={{ fontSize: '0.8rem', fontFamily: 'Tahoma' }}>پارەدان لە کاتی گەیشتن</span>
+                            <span style={{ fontSize: '0.8rem' }}>پارەدان لە کاتی گەیشتن</span>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
                             <FaShoppingCart style={{ fontSize: '1.5rem', color: 'var(--color-secondary)' }} />
                             <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Easy Shopping</span>
-                            <span style={{ fontSize: '0.8rem', fontFamily: 'Tahoma' }}>کڕینی ئاسان</span>
+                            <span style={{ fontSize: '0.8rem' }}>کڕینی ئاسان</span>
                         </div>
                     </div>
                 </motion.div>
