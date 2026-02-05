@@ -7,6 +7,8 @@ import Feedbacks from './components/Feedbacks';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,7 @@ function App() {
       <Feedbacks />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

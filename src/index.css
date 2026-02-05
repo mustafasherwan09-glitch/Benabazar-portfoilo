@@ -88,6 +88,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   overflow-x: hidden;
   /* Prevent horizontal scroll on mobile */
   width: 100%;

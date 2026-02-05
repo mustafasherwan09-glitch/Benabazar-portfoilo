@@ -45,12 +45,12 @@ const Navbar = () => {
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
         {/* Logo */}
-        <div className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', zIndex: 1001 }}>
+        <a href="#home" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', zIndex: 1001, textDecoration: 'none' }}>
           <img src="/benabazarlogo.png" alt="Bena Bazar" style={{ height: '40px', objectFit: 'contain' }} />
           <h1 style={{ color: 'var(--color-primary)', fontWeight: 800, fontSize: '1.25rem' }}>
             BENA <span style={{ color: 'var(--color-text)' }}>BAZAR</span>
           </h1>
-        </div>
+        </a>
 
         {/* Desktop Menu */}
         <div className="desktop-menu hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
