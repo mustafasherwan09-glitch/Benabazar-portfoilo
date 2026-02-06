@@ -87,6 +87,20 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="desktop-menu hidden-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          {/* Shop Link */}
+          <Link
+            to="/shop"
+            style={{
+              color: 'var(--color-text)',
+              fontWeight: 600,
+              fontSize: '1rem',
+              cursor: 'pointer',
+              textDecoration: 'none'
+            }}
+          >
+            Shop
+          </Link>
+
           {['Home', 'Services', 'Feedbacks', 'Contact'].map((item) => (
             <a
               key={item}
@@ -190,6 +204,19 @@ const Navbar = () => {
               zIndex: 1000
             }}
           >
+            <Link
+              to="/shop"
+              onClick={() => setIsOpen(false)}
+              style={{
+                color: 'var(--color-text)',
+                fontSize: '2rem',
+                fontWeight: 700,
+                textDecoration: 'none'
+              }}
+            >
+              Shop
+            </Link>
+
             {['Home', 'Services', 'Feedbacks', 'Contact'].map((item) => (
               <a
                 key={item}
