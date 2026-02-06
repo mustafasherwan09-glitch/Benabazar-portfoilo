@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaInstagram, FaBars, FaTimes, FaUser } from 'react-icons/fa';
+import { FaInstagram, FaBars, FaTimes, FaUser, FaShoppingCart } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { cart, setIsCartOpen } = useCart();
+  const cartItemCount = cart.reduce((acc, item) => acc + item.quantity, 0);
   const isHome = location.pathname === '/';
 
   useEffect(() => {
@@ -64,6 +67,39 @@ const Navbar = () => {
               BENA <span style={{ color: 'var(--color-text)' }}>BAZAR</span>
             </h1>
           </Link>
+
+          <button
+            onClick={() => setIsCartOpen(true)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--color-primary)',
+              fontSize: '1.2rem',
+              cursor: 'pointer',
+              position: 'relative',
+              marginLeft: '0.5rem'
+            }}
+          >
+            <FaShoppingCart />
+            {cartItemCount > 0 && (
+              <span style={{
+                position: 'absolute',
+                top: '-5px',
+                right: '-5px',
+                background: 'var(--color-secondary)',
+                color: 'white',
+                borderRadius: '50%',
+                width: '16px',
+                height: '16px',
+                fontSize: '0.6rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                {cartItemCount}
+              </span>
+            )}
+          </button>
 
           <Link
             to="/login"
@@ -140,6 +176,46 @@ const Navbar = () => {
           >
             <FaInstagram /> Insta
           </a>
+
+          {/* Cart Button */}
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="btn-outline"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.5rem 1rem',
+              borderRadius: '9999px',
+              border: '2px solid var(--color-primary)',
+              color: 'var(--color-primary)',
+              background: 'transparent',
+              fontSize: '0.9rem',
+              fontWeight: 600,
+              cursor: 'pointer',
+              position: 'relative'
+            }}
+          >
+            <FaShoppingCart /> Cart
+            {cartItemCount > 0 && (
+              <span style={{
+                position: 'absolute',
+                top: '-8px',
+                right: '-8px',
+                background: 'var(--color-secondary)',
+                color: 'white',
+                borderRadius: '50%',
+                width: '20px',
+                height: '20px',
+                fontSize: '0.75rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                {cartItemCount}
+              </span>
+            )}
+          </button>
 
           {/* Login Button */}
           <Link

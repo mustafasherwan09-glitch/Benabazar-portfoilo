@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { supabase } from '../supabaseClient';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -19,6 +20,7 @@ const Shop = () => {
         name: '', description: '', price: '', category: 'General', image_url: '', stock: 10
     });
     const [isAdding, setIsAdding] = useState(false);
+    const { addToCart } = useCart();
 
     useEffect(() => {
         fetchProducts();
@@ -344,9 +346,10 @@ const Shop = () => {
                                         </span>
                                         <button
                                             disabled={product.stock <= 0}
+                                            onClick={() => addToCart(product)}
                                             style={{
                                                 padding: '8px 16px',
-                                                background: product.stock > 0 ? 'var(--color-secondary)' : '#ccc',
+                                                background: product.stock > 0 ? 'var(--color-primary)' : '#ccc',
                                                 color: 'white',
                                                 border: 'none',
                                                 borderRadius: '8px',
@@ -356,7 +359,7 @@ const Shop = () => {
                                                 gap: '5px'
                                             }}
                                         >
-                                            <FaShoppingCart /> {product.stock > 0 ? 'Add' : 'Sold'}
+                                            <FaShoppingCart /> {product.stock > 0 ? 'Add to Cart' : 'Sold'}
                                         </button>
                                     </div>
                                 </div>
