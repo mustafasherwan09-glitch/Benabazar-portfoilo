@@ -48,6 +48,20 @@ const Orders = () => {
         };
 
         fetchOrders();
+
+        // Realtime Subscription
+        const subscription = supabase
+            .channel('orders_channel')
+            .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'orders' }, (payload) => {
+                setOrders(prevOrders => prevOrders.map(order =>
+                    order.id === payload.new.id ? { ...order, ...payload.new } : order
+                ));
+            })
+            .subscribe();
+
+        return () => {
+            subscription.unsubscribe();
+        };
     }, []);
 
     const updateStatus = async (orderId, newStatus) => {
@@ -66,9 +80,87 @@ const Orders = () => {
         }
     };
 
+    const handlePrintSticker = (order) => {
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(`
+            <html>
+                <head>
+                    <title>Order #${order.id}</title>
+                    <style>
+                        @page { size: 70mm 70mm; margin: 0; }
+                        body { 
+                            width: 70mm; 
+                            height: 70mm; 
+                            margin: 0; 
+                            padding: 5px; 
+                            font-family: 'Arial', sans-serif; 
+                            font-size: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            box-sizing: border-box;
+                        }
+                        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 5px; }
+                        .title { font-size: 14px; fontWeight: bold; margin: 0; }
+                        .info { margin-bottom: 5px; }
+                        .label { font-weight: bold; }
+                        .items { width: 100%; border-collapse: collapse; margin-top: 5px; font-size: 9px; }
+                        .items th { border-bottom: 1px solid #000; text-align: left; }
+                        .items td { border-bottom: 1px dotted #ccc; padding: 2px 0; }
+                        .footer { margin-top: auto; text-align: center; border-top: 1px solid #000; padding-top: 2px; }
+                        .total { font-size: 12px; font-weight: bold; }
+                    </style>
+                </head>
+                <body>
+                    <div class="header">
+                        <h1 class="title">BENABAZAR</h1>
+                        <div>Order #${order.id}</div>
+                    </div>
+                    
+                    <div class="info">
+                        <div><span class="label">Customer:</span> ${order.customer_name || 'N/A'}</div>
+                        <div><span class="label">Phone:</span> ${order.phone || 'N/A'}</div>
+                        <div><span class="label">City:</span> ${order.city || 'N/A'}</div>
+                        <div><span class="label">Address:</span> ${order.address || 'N/A'}</div>
+                    </div>
+
+                    <table class="items">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${order.items ? order.items.map(item => `
+                                <tr>
+                                    <td>${item.name}</td>
+                                    <td>${item.quantity}</td>
+                                    <td>${(item.price * item.quantity).toLocaleString()}</td>
+                                </tr>
+                            `).join('') : ''}
+                        </tbody>
+                    </table>
+
+                    <div class="footer">
+                        <div class="total">TOTAL: ${order.total_price?.toLocaleString()} IQD</div>
+                        <div>${new Date(order.created_at).toLocaleDateString()}</div>
+                    </div>
+                </body>
+            </html>
+        `);
+        printWindow.document.close();
+        printWindow.focus();
+        setTimeout(() => {
+            printWindow.print();
+            printWindow.close();
+        }, 500);
+    };
+
     const getStatusColor = (status) => {
         switch (status) {
             case 'pending': return '#ffc107'; // yellow
+            case 'confirmed': return '#00bcd4'; // cyan
             case 'preparing': return '#2196f3'; // blue
             case 'shipped': return '#9c27b0'; // purple
             case 'delivered': return '#4caf50'; // green
@@ -90,6 +182,7 @@ const Orders = () => {
             gap: '5px'
         }}>
             {status === 'pending' && <FaClock />}
+            {status === 'confirmed' && <FaCheck />}
             {status === 'preparing' && <FaBox />}
             {status === 'shipped' && <FaTruck />}
             {status === 'delivered' && <FaCheck />}
@@ -183,9 +276,26 @@ const Orders = () => {
                                     {/* Admin Controls */}
                                     {isAdmin && (
                                         <div style={{ marginTop: '15px', paddingTop: '15px', borderTop: '1px dashed #ddd' }}>
-                                            <p style={{ fontSize: '0.8rem', fontWeight: 'bold', marginBottom: '10px' }}>Update Status:</p>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                                                <p style={{ fontSize: '0.8rem', fontWeight: 'bold', margin: 0 }}>Update Status:</p>
+                                                <button
+                                                    onClick={() => handlePrintSticker(order)}
+                                                    style={{
+                                                        background: '#333',
+                                                        color: 'white',
+                                                        border: 'none',
+                                                        padding: '5px 15px',
+                                                        borderRadius: '5px',
+                                                        fontSize: '0.8rem',
+                                                        cursor: 'pointer',
+                                                        fontWeight: 'bold'
+                                                    }}
+                                                >
+                                                    Print Sticker (7x7cm)
+                                                </button>
+                                            </div>
                                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                                                {['pending', 'preparing', 'shipped', 'delivered', 'cancelled'].map(status => (
+                                                {['pending', 'confirmed', 'preparing', 'shipped', 'delivered', 'cancelled'].map(status => (
                                                     <button
                                                         key={status}
                                                         onClick={() => updateStatus(order.id, status)}
