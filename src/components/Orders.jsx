@@ -134,7 +134,10 @@ const Orders = () => {
                         <tbody>
                             ${order.items ? order.items.map(item => `
                                 <tr>
-                                    <td>${item.name}</td>
+                                    <td>
+                                        ${item.name}
+                                        <div style="font-size:8px; color:#555">SKU: ${item.sku || '-'}</div>
+                                    </td>
                                     <td>${item.quantity}</td>
                                     <td>${(item.price * item.quantity).toLocaleString()}</td>
                                 </tr>
@@ -255,7 +258,10 @@ const Orders = () => {
                                                 <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.95rem', borderBottom: '1px solid #f9f9f9', paddingBottom: '5px' }}>
                                                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                                         <span style={{ fontWeight: 'bold', background: '#eee', width: '25px', height: '25px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem' }}>{item.quantity}x</span>
-                                                        <span>{item.name}</span>
+                                                        <span>
+                                                            {item.name}
+                                                            {isAdmin && item.sku && <span style={{ fontSize: '0.75rem', color: '#666', marginLeft: '5px', background: '#eee', padding: '2px 4px', borderRadius: '4px' }}>SKU: {item.sku}</span>}
+                                                        </span>
                                                     </div>
                                                     <span>${(item.price * item.quantity).toFixed(2)}</span>
                                                 </div>
