@@ -20,7 +20,7 @@ const Shop = () => {
         name: '', description: '', price: '', category: 'General', image_url: '', stock: 10, sku: ''
     });
     const [isAdding, setIsAdding] = useState(false);
-    const { addToCart } = useCart();
+    const { addToCart, exchangeRate } = useCart();
 
     useEffect(() => {
         fetchProducts();
@@ -89,6 +89,19 @@ const Shop = () => {
         }
     };
 
+    const handleUpdateRate = async () => {
+        const newRate = prompt('Enter new exchange rate (e.g. 1500 for $1 = 1500 IQD):', exchangeRate);
+        if (newRate && !isNaN(newRate)) {
+            const { error } = await supabase
+                .from('global_settings')
+                .update({ exchange_rate: parseFloat(newRate) })
+                .eq('id', 1);
+
+            if (error) alert('Error updating rate');
+            else alert('Exchange rate updated! New orders will use this rate.');
+        }
+    };
+
     const handleUpdateStock = async (id, newStock) => {
         try {
             const { error } = await supabase
@@ -134,21 +147,36 @@ const Shop = () => {
                 </p>
 
                 {isAdmin && (
-                    <button
-                        onClick={() => setIsAdding(!isAdding)}
-                        style={{
-                            marginTop: '1rem',
-                            padding: '10px 24px',
-                            background: 'white',
-                            color: 'var(--color-primary)',
-                            border: 'none',
-                            borderRadius: '20px',
-                            fontWeight: 'bold',
-                            cursor: 'pointer'
-                        }}
-                    >
-                        {isAdding ? 'Close Form' : '+ Add New Product'}
-                    </button>
+                    <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', marginTop: '1rem', flexWrap: 'wrap' }}>
+                        <button
+                            onClick={() => setIsAdding(!isAdding)}
+                            style={{
+                                padding: '10px 24px',
+                                background: 'white',
+                                color: 'var(--color-primary)',
+                                border: 'none',
+                                borderRadius: '20px',
+                                fontWeight: 'bold',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            {isAdding ? 'Close Form' : '+ Add New Product'}
+                        </button>
+                        <button
+                            onClick={handleUpdateRate}
+                            style={{
+                                padding: '10px 24px',
+                                background: 'var(--color-secondary)',
+                                color: 'white',
+                                border: 'none',
+                                borderRadius: '20px',
+                                fontWeight: 'bold',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            Rate: {exchangeRate} IQD
+                        </button>
+                    </div>
                 )}
             </div>
 

@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import { supabase } from '../supabaseClient';
 
 const CartContext = createContext();
 
@@ -7,6 +8,7 @@ export const useCart = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [exchangeRate, setExchangeRate] = useState(1500); // Default
 
     // Load cart from local storage on mount
     useEffect(() => {
@@ -14,6 +16,33 @@ export const CartProvider = ({ children }) => {
         if (savedCart) {
             setCart(JSON.parse(savedCart));
         }
+
+        // Fetch Exchange Rate
+        const fetchRate = async () => {
+            const { data, error } = await supabase
+                .from('global_settings')
+                .select('exchange_rate')
+                .eq('id', 1)
+                .single();
+            if (data) {
+                setExchangeRate(data.exchange_rate);
+            }
+        };
+        fetchRate();
+
+        // Subscribe to Rate Changes
+        const subscription = supabase
+            .channel('public:global_settings')
+            .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'global_settings' }, (payload) => {
+                if (payload.new && payload.new.exchange_rate) {
+                    setExchangeRate(payload.new.exchange_rate);
+                }
+            })
+            .subscribe();
+
+        return () => {
+            subscription.unsubscribe();
+        };
     }, []);
 
     // Save cart to local storage whenever it changes
@@ -63,7 +92,9 @@ export const CartProvider = ({ children }) => {
             removeFromCart,
             updateQuantity,
             clearCart,
-            getCartTotal
+            getCartTotal,
+            exchangeRate,
+            setExchangeRate
         }}>
             {children}
         </CartContext.Provider>

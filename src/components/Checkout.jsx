@@ -8,7 +8,7 @@ import { supabase } from '../supabaseClient';
 import { FaCheckCircle } from 'react-icons/fa';
 
 const Checkout = () => {
-    const { cart, getCartTotal, clearCart } = useCart();
+    const { cart, getCartTotal, clearCart, exchangeRate } = useCart();
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [orderComplete, setOrderComplete] = useState(false);
@@ -35,8 +35,9 @@ const Checkout = () => {
     };
 
     const deliveryPrice = getDeliveryPrice(formData.city);
-    const subtotal = getCartTotal();
-    const total = subtotal + deliveryPrice;
+    const subtotalUSD = getCartTotal();
+    const subtotalIQD = subtotalUSD * exchangeRate;
+    const finalTotalIQD = subtotalIQD + deliveryPrice;
 
     useEffect(() => {
         if (cart.length === 0 && !orderComplete) {
@@ -54,7 +55,7 @@ const Checkout = () => {
 
             const orderData = {
                 items: cart,
-                total_price: total,
+                total_price: finalTotalIQD,
                 delivery_price: deliveryPrice,
                 city: formData.city,
                 address: formData.address,
@@ -195,7 +196,7 @@ const Checkout = () => {
                                 className="btn btn-primary"
                                 style={{ marginTop: '10px', padding: '15px', fontSize: '1.2rem', width: '100%' }}
                             >
-                                {loading ? 'Processing...' : `Place Order - ${(total).toLocaleString()} IQD`}
+                                {loading ? 'Processing...' : `Place Order - ${(finalTotalIQD).toLocaleString()} IQD`}
                             </button>
                         </form>
                     </div>
@@ -217,16 +218,20 @@ const Checkout = () => {
 
                         <div style={{ borderTop: '2px solid #eee', paddingTop: '15px' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                                <span>Subtotal</span>
-                                <span>${subtotal.toFixed(2)}</span>
+                                <span>Subtotal (USD)</span>
+                                <span>${subtotalUSD.toFixed(2)}</span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', fontSize: '0.9rem', color: '#666' }}>
+                                <span>Exchange Rate</span>
+                                <span>$1 = {exchangeRate.toLocaleString()} IQD</span>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', color: 'var(--color-primary)' }}>
                                 <span>Delivery Fee ({formData.city})</span>
                                 <span>{deliveryPrice.toLocaleString()} IQD</span>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '15px', fontSize: '1.5rem', fontWeight: 'bold' }}>
-                                <span>Total</span>
-                                <span>{(subtotal * 1300 + deliveryPrice).toLocaleString()} IQD <span style={{ fontSize: '0.8rem', fontWeight: 'normal' }}>(Approx)</span></span>
+                                <span>Total (IQD)</span>
+                                <span>{finalTotalIQD.toLocaleString()} IQD</span>
                             </div>
                             <small style={{ display: 'block', marginTop: '5px', color: '#777' }}>* Payment is Cash on Delivery (COD)</small>
                         </div>
