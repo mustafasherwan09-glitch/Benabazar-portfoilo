@@ -64,6 +64,23 @@ const Orders = () => {
         };
     }, []);
 
+    const handleDeleteOrder = async (orderId) => {
+        if (!window.confirm('Are you sure you want to permanently delete this order? This cannot be undone.')) return;
+
+        try {
+            const { error } = await supabase
+                .from('orders')
+                .delete()
+                .eq('id', orderId);
+
+            if (error) throw error;
+            setOrders(orders.filter(o => o.id !== orderId));
+            alert('Order deleted successfully');
+        } catch (error) {
+            alert('Error deleting order: ' + error.message);
+        }
+    };
+
     const updateStatus = async (orderId, newStatus) => {
         try {
             const { error } = await supabase
@@ -320,6 +337,24 @@ const Orders = () => {
                                                         {status.charAt(0).toUpperCase() + status.slice(1)}
                                                     </button>
                                                 ))}
+                                                {order.status === 'cancelled' && (
+                                                    <button
+                                                        onClick={() => handleDeleteOrder(order.id)}
+                                                        style={{
+                                                            padding: '5px 12px',
+                                                            borderRadius: '15px',
+                                                            border: '1px solid red',
+                                                            background: '#ffebee',
+                                                            color: 'red',
+                                                            cursor: 'pointer',
+                                                            fontSize: '0.8rem',
+                                                            fontWeight: 'bold',
+                                                            marginLeft: 'auto'
+                                                        }}
+                                                    >
+                                                        Delete Order
+                                                    </button>
+                                                )}
                                             </div>
                                         </div>
                                     )}
