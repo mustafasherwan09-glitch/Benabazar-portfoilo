@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaShoppingCart, FaSearch, FaFilter } from 'react-icons/fa';
+import { FaShoppingCart, FaSearch, FaFilter, FaTrash, FaEdit } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { supabase } from '../supabaseClient';
@@ -11,17 +11,35 @@ const Shop = () => {
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('All');
+    const [user, setUser] = useState(null);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    // Admin Add Product State
+    const [newProduct, setNewProduct] = useState({
+        name: '', description: '', price: '', category: 'General', image_url: '', stock: 10
+    });
+    const [isAdding, setIsAdding] = useState(false);
 
     useEffect(() => {
         fetchProducts();
+        checkUser();
     }, []);
+
+    const checkUser = async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        setUser(user);
+        if (user && user.email === 'admin@benabazar.com') {
+            setIsAdmin(true);
+        }
+    };
 
     const fetchProducts = async () => {
         try {
             setLoading(true);
             const { data, error } = await supabase
                 .from('products')
-                .select('*');
+                .select('*')
+                .order('created_at', { ascending: false });
 
             if (error) throw error;
             setProducts(data || []);
@@ -31,6 +49,57 @@ const Shop = () => {
             setLoading(false);
         }
     };
+
+    const handleAddProduct = async (e) => {
+        e.preventDefault();
+        if (!isAdmin) return;
+
+        try {
+            const { data, error } = await supabase
+                .from('products')
+                .insert([newProduct])
+                .select();
+
+            if (error) throw error;
+
+            setProducts([data[0], ...products]);
+            setIsAdding(false);
+            setNewProduct({ name: '', description: '', price: '', category: 'General', image_url: '', stock: 10 });
+            alert('Product added successfully!');
+        } catch (error) {
+            alert('Error adding product: ' + error.message);
+        }
+    };
+
+    const handleDeleteProduct = async (id) => {
+        if (!window.confirm('Are you sure you want to delete this product?')) return;
+
+        try {
+            const { error } = await supabase
+                .from('products')
+                .delete()
+                .eq('id', id);
+
+            if (error) throw error;
+            setProducts(products.filter(p => p.id !== id));
+        } catch (error) {
+            alert('Error deleting product: ' + error.message);
+        }
+    };
+
+    const handleUpdateStock = async (id, newStock) => {
+        try {
+            const { error } = await supabase
+                .from('products')
+                .update({ stock: newStock })
+                .eq('id', id);
+
+            if (error) throw error;
+            setProducts(products.map(p => p.id === id ? { ...p, stock: newStock } : p));
+        } catch (error) {
+            console.error('Error updating stock', error);
+        }
+    }
 
     const categories = ['All', ...new Set(products.map(p => p.category).filter(Boolean))];
 
@@ -56,12 +125,96 @@ const Shop = () => {
                     animate={{ opacity: 1, y: 0 }}
                     style={{ fontSize: '2.5rem', marginBottom: '1rem' }}
                 >
-                    Shop Our Collection
+                    {isAdmin ? 'Admin Dashboard' : 'Shop Our Collection'}
                 </motion.h1>
-                <p style={{ opacity: 0.9 }}>دیاریترین بەرهەمەکانمان ببینە و داوا بکە</p>
+                <p style={{ opacity: 0.9 }}>
+                    {isAdmin ? 'Manage your inventory and products' : 'دیاریترین بەرهەمەکانمان ببینە و داوا بکە'}
+                </p>
+
+                {isAdmin && (
+                    <button
+                        onClick={() => setIsAdding(!isAdding)}
+                        style={{
+                            marginTop: '1rem',
+                            padding: '10px 24px',
+                            background: 'white',
+                            color: 'var(--color-primary)',
+                            border: 'none',
+                            borderRadius: '20px',
+                            fontWeight: 'bold',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        {isAdding ? 'Close Form' : '+ Add New Product'}
+                    </button>
+                )}
             </div>
 
             <div className="container" style={{ flex: 1, padding: '40px 20px', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+
+                {/* Admin Add Form */}
+                {isAdmin && isAdding && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        style={{
+                            background: 'white',
+                            padding: '2rem',
+                            borderRadius: '15px',
+                            marginBottom: '2rem',
+                            boxShadow: '0 5px 20px rgba(0,0,0,0.1)'
+                        }}
+                    >
+                        <h3 style={{ marginBottom: '1rem', color: 'var(--color-primary)' }}>Add New Product</h3>
+                        <form onSubmit={handleAddProduct} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                            <input
+                                placeholder="Product Name"
+                                value={newProduct.name}
+                                onChange={e => setNewProduct({ ...newProduct, name: e.target.value })}
+                                required
+                                style={{ padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }}
+                            />
+                            <input
+                                placeholder="Price ($)"
+                                type="number"
+                                value={newProduct.price}
+                                onChange={e => setNewProduct({ ...newProduct, price: e.target.value })}
+                                required
+                                style={{ padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }}
+                            />
+                            <input
+                                placeholder="Category (e.g. Shoes)"
+                                value={newProduct.category}
+                                onChange={e => setNewProduct({ ...newProduct, category: e.target.value })}
+                                required
+                                style={{ padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }}
+                            />
+                            <input
+                                placeholder="Stock Quantity"
+                                type="number"
+                                value={newProduct.stock}
+                                onChange={e => setNewProduct({ ...newProduct, stock: e.target.value })}
+                                required
+                                style={{ padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }}
+                            />
+                            <input
+                                placeholder="Image URL (http://...)"
+                                value={newProduct.image_url}
+                                onChange={e => setNewProduct({ ...newProduct, image_url: e.target.value })}
+                                style={{ gridColumn: 'span 2', padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }}
+                            />
+                            <textarea
+                                placeholder="Description"
+                                value={newProduct.description}
+                                onChange={e => setNewProduct({ ...newProduct, description: e.target.value })}
+                                style={{ gridColumn: 'span 2', padding: '10px', borderRadius: '8px', border: '1px solid #ccc', minHeight: '80px' }}
+                            />
+                            <button type="submit" className="btn btn-primary" style={{ gridColumn: 'span 2' }}>
+                                Save Product
+                            </button>
+                        </form>
+                    </motion.div>
+                )}
 
                 {/* Search and Filter */}
                 <div style={{
@@ -145,6 +298,27 @@ const Shop = () => {
                                     justifyContent: 'center',
                                     position: 'relative'
                                 }}>
+                                    {isAdmin && (
+                                        <button
+                                            onClick={() => handleDeleteProduct(product.id)}
+                                            style={{
+                                                position: 'absolute',
+                                                top: 10,
+                                                left: 10,
+                                                background: 'rgba(255,0,0,0.8)',
+                                                color: 'white',
+                                                border: 'none',
+                                                padding: '8px',
+                                                borderRadius: '50%',
+                                                cursor: 'pointer',
+                                                zIndex: 10,
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center'
+                                            }}
+                                            title="Delete Product"
+                                        >
+                                            <FaTrash size={12} />
+                                        </button>
+                                    )}
                                     {product.image_url ? (
                                         <img src={product.image_url} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     ) : (

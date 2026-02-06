@@ -35,7 +35,7 @@ const Login = () => {
                     password,
                 });
                 if (error) throw error;
-                navigate('/'); // Redirect to home on successful login
+                navigate('/shop'); // Redirect to shop on successful login
             }
         } catch (error) {
             setError(error.message);
