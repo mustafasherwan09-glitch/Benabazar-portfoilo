@@ -187,10 +187,16 @@ const Shop = () => {
                             <input
                                 placeholder="Category (e.g. Shoes)"
                                 value={newProduct.category}
+                                list="category-options"
                                 onChange={e => setNewProduct({ ...newProduct, category: e.target.value })}
                                 required
                                 style={{ padding: '10px', borderRadius: '8px', border: '1px solid #ccc' }}
                             />
+                            <datalist id="category-options">
+                                {categories.filter(c => c !== 'All').map(cat => (
+                                    <option key={cat} value={cat} />
+                                ))}
+                            </datalist>
                             <input
                                 placeholder="Stock Quantity"
                                 type="number"
@@ -334,7 +340,16 @@ const Shop = () => {
                                 </div>
 
                                 <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                                    <div style={{ fontSize: '0.9rem', color: '#888', marginBottom: '0.5rem' }}>{product.category}</div>
+                                    <div style={{ fontSize: '0.9rem', color: '#888', marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between' }}>
+                                        <span>{product.category}</span>
+                                        <span style={{
+                                            color: product.stock < 5 ? '#e91e63' : '#4caf50',
+                                            fontWeight: 'bold',
+                                            fontSize: '0.85rem'
+                                        }}>
+                                            {product.stock > 0 ? `${product.stock} in stock` : 'Out of Stock'}
+                                        </span>
+                                    </div>
                                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', flex: 1 }}>{product.name}</h3>
                                     <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                                         {product.description}
