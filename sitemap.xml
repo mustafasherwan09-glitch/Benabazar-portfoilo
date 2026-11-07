@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.benabazar.com/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ku" href="https://www.benabazar.com/?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.benabazar.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.benabazar.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/"/>
+  </url>
+  <url>
+    <loc>https://www.benabazar.com/how-it-works.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ku" href="https://www.benabazar.com/how-it-works.html?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.benabazar.com/how-it-works.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.benabazar.com/how-it-works.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/how-it-works.html"/>
+  </url>
+  <url>
+    <loc>https://www.benabazar.com/about.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ku" href="https://www.benabazar.com/about.html?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.benabazar.com/about.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.benabazar.com/about.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/about.html"/>
+  </url>
+  <url>
+    <loc>https://www.benabazar.com/privacy.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ku" href="https://www.benabazar.com/privacy.html?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.benabazar.com/privacy.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.benabazar.com/privacy.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.benabazar.com/terms.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ku" href="https://www.benabazar.com/terms.html?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.benabazar.com/terms.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.benabazar.com/terms.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/terms.html"/>
+  </url>
+  <url>
+    <loc>https://www.benabazar.com/shipping.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ku" href="https://www.benabazar.com/shipping.html?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.benabazar.com/shipping.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.benabazar.com/shipping.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/shipping.html"/>
+  </url>
+  <url>
+    <loc>https://www.benabazar.com/returns.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ku" href="https://www.benabazar.com/returns.html?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.benabazar.com/returns.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.benabazar.com/returns.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/returns.html"/>
+  </url>
+  <url>
+    <loc>https://www.benabazar.com/contact.html</loc>
+    <lastmod>2026-11-07</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ku" href="https://www.benabazar.com/contact.html?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.benabazar.com/contact.html?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.benabazar.com/contact.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/contact.html"/>
+  </url>
+</urlset>

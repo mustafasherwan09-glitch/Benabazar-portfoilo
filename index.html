@@ -1,19 +1,624 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="ku" dir="rtl" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/benabazarlogo.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <title>Bena Bazar | Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* Language: ?lang= → saved preference → Kurdish (default). Runs before paint to avoid flashes. */
+(function(){var d=document.documentElement,ok=["ku","ar","en"],l=null;
+try{l=new URLSearchParams(location.search).get("lang");}catch(e){}
+if(ok.indexOf(l)<0){try{l=localStorage.getItem("bb-lang");}catch(e){}}
+if(ok.indexOf(l)<0){l="ku";}
+d.lang=l;d.dir=l==="en"?"ltr":"rtl";d.className=d.className.replace("no-js","js");
+try{localStorage.setItem("bb-lang",l);}catch(e){}})();
+</script>
+<title>Bena Bazar | The whole SHEIN bazaar, brought to your door</title>
+<meta name="description" content="Bena Bazar is an independent online personal-shopping service: choose items on SHEIN, send us your basket on WhatsApp, we buy them for you and deliver to your door anywhere in Iraq and the Kurdistan Region. Cash on delivery.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.benabazar.com/">
+<link rel="alternate" hreflang="ku" href="https://www.benabazar.com/?lang=ku">
+<link rel="alternate" hreflang="ar" href="https://www.benabazar.com/?lang=ar">
+<link rel="alternate" hreflang="en" href="https://www.benabazar.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://www.benabazar.com/">
+<meta name="facebook-domain-verification" content="PASTE_CODE_FROM_META" />
+<meta name="theme-color" content="#5A1A2E">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bena Bazar">
+<meta property="og:title" content="Bena Bazar | The whole SHEIN bazaar, brought to your door">
+<meta property="og:description" content="Bena Bazar is an independent online personal-shopping service: choose items on SHEIN, send us your basket on WhatsApp, we buy them for you and deliver to your door anywhere in Iraq and the Kurdistan Region. Cash on delivery.">
+<meta property="og:url" content="https://www.benabazar.com/">
+<meta property="og:image" content="https://www.benabazar.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bena Bazar logo">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="cb_IQ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bena Bazar | The whole SHEIN bazaar, brought to your door">
+<meta name="twitter:description" content="Bena Bazar is an independent online personal-shopping service: choose items on SHEIN, send us your basket on WhatsApp, we buy them for you and deliver to your door anywhere in Iraq and the Kurdistan Region. Cash on delivery.">
+<meta name="twitter:image" content="https://www.benabazar.com/assets/img/og-image.png">
+
+<!-- Icons -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Vazirmatn:wght@300;400;500;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.benabazar.com/#business",
+  "name": "Bena Bazar",
+  "alternateName": [
+    "بێنە بازاڕ",
+    "بينه بازار"
+  ],
+  "description": "Independent online personal-shopping service: we purchase items customers choose on SHEIN on their behalf, ship them from the UAE and deliver to their door anywhere in Iraq and the Kurdistan Region. Not affiliated with SHEIN.",
+  "url": "https://www.benabazar.com/",
+  "logo": "https://www.benabazar.com/assets/img/icon-512.png",
+  "image": "https://www.benabazar.com/assets/img/og-image.png",
+  "telephone": "+964 750 924 0950",
+  "email": "info@benabazar.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "40 Meter Street, Brayati, near Pharma",
+    "addressLocality": "Erbil",
+    "addressRegion": "Kurdistan Region",
+    "addressCountry": "IQ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.2004780,
+    "longitude": 44.0392230
+  },
+  "hasMap": "https://www.google.com/maps?q=36.2004780,44.0392230",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Iraq"
+  },
+  "paymentAccepted": "Cash",
+  "currenciesAccepted": "IQD",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.instagram.com/bena.bazar",
+    "https://www.facebook.com/share/1BCmGrr11t/"
+  ]
+}
+</script>
 </head>
+<body data-page="home">
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+<a class="skip-link" href="#main"><span data-l="ku">بازدان بۆ ناوەڕۆک</span><span data-l="ar">انتقل إلى المحتوى</span><span data-l="en">Skip to content</span></a>
+<div class="loader" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Bena Bazar — بێنە بازاڕ">
+      <img src="assets/img/mark.png" width="34" height="38" alt="">
+      <span class="brand-word"><b>BENA BAZAR</b><small>بێنە بازاڕ</small></span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html" aria-current="page"><span data-l="ku">سەرەکی</span><span data-l="ar">الرئيسية</span><span data-l="en">Home</span></a>
+      <a href="how-it-works.html"><span data-l="ku">چۆن کار دەکات</span><span data-l="ar">كيف نعمل</span><span data-l="en">How it works</span></a>
+      <a href="about.html"><span data-l="ku">دەربارەی ئێمە</span><span data-l="ar">من نحن</span><span data-l="en">About</span></a>
+      <a href="contact.html"><span data-l="ku">پەیوەندی</span><span data-l="ar">اتصل بنا</span><span data-l="en">Contact</span></a>
+      <a class="btn btn--primary nav-wa" data-wa="general" href="https://wa.me/9647509240950"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 11.6a8.4 8.4 0 0 1-12.5 7.3L3.4 20l1.2-4.1a8.4 8.4 0 1 1 15.6-4.3z"/><path d="M9 8.3c-.1 3.6 3 6.8 6.6 6.7l.9-1.5-2-1.1-1 .8a4.6 4.6 0 0 1-2.3-2.3l.8-1-1-2.1L9 8.3z"/></svg><span data-l="ku">داواکردن لە واتسئاپ</span><span data-l="ar">اطلب عبر واتساب</span><span data-l="en">Order on WhatsApp</span></a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language · زمان · اللغة">
+        <button type="button" lang="ku" aria-pressed="true">کوردی</button><button type="button" lang="ar" aria-pressed="false">عربي</button><button type="button" lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--primary header-wa" data-wa="general" href="https://wa.me/9647509240950"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 11.6a8.4 8.4 0 0 1-12.5 7.3L3.4 20l1.2-4.1a8.4 8.4 0 1 1 15.6-4.3z"/><path d="M9 8.3c-.1 3.6 3 6.8 6.6 6.7l.9-1.5-2-1.1-1 .8a4.6 4.6 0 0 1-2.3-2.3l.8-1-1-2.1L9 8.3z"/></svg><span>WhatsApp</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu" data-i18n-aria="ui.menu">
+        <svg class="ico i-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="ico i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <img class="hero-logo reveal" src="assets/img/logo.png" width="498" height="577" alt="Bena Bazar — بێنە بازاڕ" fetchpriority="high">
+    <p class="eyebrow reveal"><span data-l="ku">خزمەتگوزاریی کڕینی ئۆنلاین · هەولێر</span><span data-l="ar">خدمة تسوّق إلكتروني · أربيل</span><span data-l="en">Online personal shopping · Erbil</span></p>
+    <h1 id="hero-title" class="reveal"><span data-l="ku">هەموو بازاڕی SHEIN،<br><em>تا بەردەم دەرگاکەت</em></span><span data-l="ar">سوق SHEIN كله،<br><em>حتى باب بيتك</em></span><span data-l="en">The whole SHEIN bazaar,<br><em>brought to your door</em></span></h1>
+    <p class="lead reveal" data-l="ku">ئەوەی دڵت دەیەوێت لە SHEIN هەڵیبژێرە و سەبەتەکەت لە واتسئاپ بۆمان بنێرە. ئەوەی تر لەسەر ئێمە: کڕین، ناردن لە ئیماراتەوە، گومرگ و گەیاندن بۆ هەر شوێنێکی عێراق و هەرێمی کوردستان.</p><p class="lead reveal" data-l="ar">اختر ما يعجبك من SHEIN وأرسل لنا سلتك عبر واتساب. والباقي علينا: الشراء، والشحن من الإمارات، والجمارك، والتوصيل إلى أي مكان في العراق وإقليم كوردستان.</p><p class="lead reveal" data-l="en">Choose what you love on SHEIN and send us your basket on WhatsApp. We take care of the rest: purchase, shipping from the UAE, customs and delivery anywhere in Iraq and the Kurdistan Region.</p>
+    <div class="reveal">
+      <div class="rate-badge">
+        <svg class="badge-arc" viewBox="0 0 30 22" aria-hidden="true"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg>
+        <span class="rate-label"><span data-l="ku">نرخی تایبەتی دۆلار</span><span data-l="ar">سعر صرف خاص</span><span data-l="en">Our special rate</span></span>
+        <span class="rate-value num">1$ = <span data-cfg="rate">1,450</span> IQD</span>
+        <span class="rate-sub"><bdi>100$ = <bdi dir="ltr" data-cfg="rate100">145,000</bdi> IQD</bdi></span>
+      </div>
+    </div>
+    <div class="btn-row reveal">
+      <a class="btn btn--primary" data-wa="order" href="https://wa.me/9647509240950"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 11.6a8.4 8.4 0 0 1-12.5 7.3L3.4 20l1.2-4.1a8.4 8.4 0 1 1 15.6-4.3z"/><path d="M9 8.3c-.1 3.6 3 6.8 6.6 6.7l.9-1.5-2-1.1-1 .8a4.6 4.6 0 0 1-2.3-2.3l.8-1-1-2.1L9 8.3z"/></svg><span data-l="ku">داواکردن لە واتسئاپ</span><span data-l="ar">اطلب عبر واتساب</span><span data-l="en">Order on WhatsApp</span></a>
+      <a class="btn btn--outline" href="#how"><span data-l="ku">چۆن کار دەکات</span><span data-l="ar">كيف نعمل</span><span data-l="en">How it works</span></a>
+    </div>
+    <div class="stats reveal">
+
+      <div class="stat"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 6h11v10h-11z"/><path d="M13.5 9h4l3 3.2V16h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><strong><span data-l="ku">گواستنەوەی بەخۆڕایی ئیمارات ← عێراق</span><span data-l="ar">شحن مجاني الإمارات ← العراق</span><span data-l="en">Free shipping UAE → Iraq</span></strong><span><span data-l="ku">گەیاندن تا دەرگا لە <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> دینارەوە</span><span data-l="ar">التوصيل إلى الباب من <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> دينار</span><span data-l="en">Door delivery from <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> IQD</span></span></div>
+
+      <div class="stat"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.6-3.4 8-8 9-4.6-1-8-4.4-8-9V6l8-3z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.8"/></svg><strong><span data-l="ku">گومرگ لەسەر ئێمەیە</span><span data-l="ar">الجمارك علينا</span><span data-l="en">Customs on us</span></strong><span><span data-l="ku">بێ تێچووی شاراوە</span><span data-l="ar">بدون رسوم مخفية</span><span data-l="en">No hidden fees</span></span></div>
+
+      <div class="stat"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><strong><span data-l="ku"><bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> ڕۆژ</span><span data-l="ar"><bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> يومًا</span><span data-l="en"><bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> days</span></strong><span><span data-l="ku">لە داواکردنەوە تا دەرگا</span><span data-l="ar">من الطلب حتى الباب</span><span data-l="en">From order to your door</span></span></div>
+
+      <div class="stat"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg><strong><span data-l="ku">پارەدان لە کاتی وەرگرتن</span><span data-l="ar">الدفع عند الاستلام</span><span data-l="en">Cash on delivery</span></strong><span><span data-l="ku">بێ پێشەکی تا <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi></span><span data-l="ar">بدون دفعة مقدمة حتى <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi></span><span data-l="en">No prepayment up to <bdi>$<bdi dir="ltr" data-cfg="threshold">300</bdi></bdi></span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST STRIP ================= -->
+<section class="trust" aria-label="Trust">
+  <div class="container">
+    <ul>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.4l2.7 2.7L16 9.8"/></svg><span data-l="ku">خزمەتگوزارییەکی سەربەخۆ</span><span data-l="ar">خدمة مستقلة</span><span data-l="en">Independent service</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 9L5 4h14l1.5 5"/><path d="M3.5 9a2.8 2.8 0 0 0 5.6 0 2.8 2.8 0 0 0 5.6 0 2.8 2.8 0 0 0 5.6 0"/><path d="M5 11.5V20h14v-8.5"/><path d="M10 20v-5h4v5"/></svg><span data-l="ku">نووسینگەی ڕاستەقینە لە هەولێر</span><span data-l="ar">مكتب حقيقي في أربيل</span><span data-l="en">Real office in Erbil</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9M12 3C9.4 5.6 8.2 8.6 8.2 12s1.2 6.4 3.8 9"/></svg><span data-l="ku">گەیاندن بۆ هەموو عێراق</span><span data-l="ar">توصيل لكل العراق</span><span data-l="en">Delivery to all Iraq</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg><span data-l="ku">پارەدان لە کاتی وەرگرتن</span><span data-l="ar">الدفع عند الاستلام</span><span data-l="en">Cash on delivery</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="section" aria-labelledby="why-title">
+  <div class="container">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">بۆچی بێنە بازاڕ</span><span data-l="ar">لماذا بينه بازار</span><span data-l="en">Why Bena Bazar</span></p>
+  <h2><span id="why-title"><span data-l="ku">بازاڕێکی تەواو، بە شێوەیەکی سادە و ئارام</span><span data-l="ar">سوق كامل، بطريقة بسيطة ومريحة</span><span data-l="en">A whole bazaar, made simple</span></span></h2>
+
+</div>
+    <div class="feature-grid feature-grid--3">
+      <div class="card reveal"><svg class="ico card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12.2V4h8.2L21 13.8 13.8 21 3 12.2z"/><circle cx="7.6" cy="8.4" r="1.3"/></svg><h3><span data-l="ku">نرخی تایبەت</span><span data-l="ar">سعر خاص</span><span data-l="en">Special rate</span></h3><p data-l="ku"><bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi></p><p data-l="ar"><bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi></p><p data-l="en"><bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi></p></div>
+      <div class="card reveal"><svg class="ico card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.5 5.5l-13 13"/><circle cx="7.5" cy="7.5" r="2.3"/><circle cx="16.5" cy="16.5" r="2.3"/></svg><h3><span data-l="ku">داشکاندنەکانی SHEIN</span><span data-l="ar">خصومات SHEIN</span><span data-l="en">SHEIN discounts</span></h3><p data-l="ku">هەموو ئەو داشکاندنانەی SHEIN کە لە کاتی کڕیندا بەردەستن، لەسەر داواکارییەکەت جێبەجێ دەکرێن.</p><p data-l="ar">جميع خصومات SHEIN المتاحة وقت الشراء تُطبَّق على طلبك.</p><p data-l="en">All SHEIN discounts available at purchase time are applied to your order.</p></div>
+      <div class="card reveal"><svg class="ico card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 6h11v10h-11z"/><path d="M13.5 9h4l3 3.2V16h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><h3><span data-l="ku">گواستنەوە و گەیاندن</span><span data-l="ar">الشحن والتوصيل</span><span data-l="en">Shipping & delivery</span></h3><p data-l="ku">گواستنەوەی بەخۆڕایی لە ئیماراتەوە بۆ عێراق • گەیاندن تا بەردەم دەرگا لە <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> دینارەوە.</p><p data-l="ar">شحن مجاني من الإمارات إلى العراق • التوصيل إلى الباب ابتداءً من <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> دينار.</p><p data-l="en">Free shipping from the UAE to Iraq • Door delivery from <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> IQD.</p></div>
+      <div class="card reveal"><svg class="ico card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.6-3.4 8-8 9-4.6-1-8-4.4-8-9V6l8-3z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.8"/></svg><h3><span data-l="ku">گومرگ لەسەر ئێمە</span><span data-l="ar">الجمارك علينا</span><span data-l="en">Customs on us</span></h3><p data-l="ku">تێچووی گومرگ لەسەر ئێمەیە، بێ هیچ تێچوویەکی شاراوە.</p><p data-l="ar">التخليص الجمركي علينا، بدون أي رسوم مخفية.</p><p data-l="en">Customs clearance is on us, with no hidden fees.</p></div>
+      <div class="card reveal"><svg class="ico card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/></svg><h3><span data-l="ku">پارەدان لە کاتی وەرگرتن</span><span data-l="ar">الدفع عند الاستلام</span><span data-l="en">Cash on delivery</span></h3><p data-l="ku">پارەدان لە کاتی وەرگرتن، بێ پێشەکی بۆ داواکارییەکانی تا <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi>.</p><p data-l="ar">الدفع عند الاستلام، بدون دفعة مقدمة للطلبات حتى <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi>.</p><p data-l="en">Cash on delivery, with no prepayment for orders up to <bdi>$<bdi dir="ltr" data-cfg="threshold">300</bdi></bdi>.</p></div>
+      <div class="card reveal"><svg class="ico card-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 9L5 4h14l1.5 5"/><path d="M3.5 9a2.8 2.8 0 0 0 5.6 0 2.8 2.8 0 0 0 5.6 0 2.8 2.8 0 0 0 5.6 0"/><path d="M5 11.5V20h14v-8.5"/><path d="M10 20v-5h4v5"/></svg><h3><span data-l="ku">نووسینگەی ڕاستەقینە</span><span data-l="ar">مكتب حقيقي</span><span data-l="en">Real office</span></h3><p data-l="ku">نووسینگەیەکی ڕاستەقینەمان لە هەولێر هەیە، دەتوانیت سەردانمان بکەیت.</p><p data-l="ar">لدينا مكتب حقيقي في أربيل يمكنك زيارته.</p><p data-l="en">We have a real office in Erbil that you can visit.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section section--ivory section--line" id="how" aria-labelledby="how-title">
+  <div class="container">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">چۆن کار دەکات</span><span data-l="ar">كيف نعمل</span><span data-l="en">How it works</span></p>
+  <h2><span id="how-title"><span data-l="ku">چوار هەنگاوی سادە</span><span data-l="ar">أربع خطوات بسيطة</span><span data-l="en">Four simple steps</span></span></h2>
+
+</div>
+    <ol class="steps">
+      <li class="step reveal" style="background:var(--cream)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 8h14l-1.2 12.2H6.2L5 8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg><span class="step-num">01</span>
+        <h3><span data-l="ku">لە SHEIN هەڵبژێرە</span><span data-l="ar">اختر من SHEIN</span><span data-l="en">Choose items in SHEIN</span></h3>
+        <p data-l="ku">ئەپ یان ماڵپەڕی SHEIN بگەڕێ و ئەوەی دڵت دەیەوێت بیخە ناو سەبەتەکەتەوە.</p><p data-l="ar">تصفّح تطبيق أو موقع SHEIN وأضف ما يعجبك إلى سلتك.</p><p data-l="en">Browse the SHEIN app or website and add what you like to your basket.</p></li>
+      <li class="step reveal" style="background:var(--cream)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9.5h8M8 12.5h5"/></svg><span class="step-num">02</span>
+        <h3><span data-l="ku">سەبەتەکەت لە واتسئاپ بنێرە</span><span data-l="ar">أرسل سلتك عبر واتساب</span><span data-l="en">Send your basket on WhatsApp</span></h3>
+        <p data-l="ku">وێنەی شاشە یان لینکی کاڵاکان لەگەڵ قەبارە و ڕەنگەکان بۆمان بنێرە.</p><p data-l="ar">أرسل لنا لقطات شاشة أو روابط المنتجات مع المقاسات والألوان.</p><p data-l="en">Send us screenshots or product links with sizes and colours.</p></li>
+      <li class="step reveal" style="background:var(--cream)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6.5" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3.4"/><path d="M8.5 6.5L10 4h4l1.5 2.5"/></svg><span class="step-num">03</span>
+        <h3><span data-l="ku">نرخی کۆتایی و بوونی کاڵا پشتڕاست دەکەینەوە</span><span data-l="ar">نؤكد السعر النهائي والتوفّر</span><span data-l="en">We confirm the final price & stock</span></h3>
+        <p data-l="ku">کاڵا نەماوەکان لادەبرێن و بە وێنەی شاشە نیشانت دەدرێن. کۆی کۆتایی بە دینار دەنێرین و تەنها دوای پشتڕاستکردنەوەی تۆ دەیکڕین.</p><p data-l="ar">المنتجات النافدة تُحذف ونريك إياها بلقطات شاشة. نرسل المجموع النهائي بالدينار ولا نشتري إلا بعد تأكيدك.</p><p data-l="en">Sold-out items are removed and shown to you with screenshots. We send the final total in IQD and buy only after you confirm.</p></li>
+      <li class="step reveal" style="background:var(--cream)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 11L12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-6h4v6"/></svg><span class="step-num">04</span>
+        <h3><span data-l="ku">تا بەردەم دەرگا، پارە لە کاتی وەرگرتن</span><span data-l="ar">إلى باب بيتك، والدفع عند الاستلام</span><span data-l="en">Delivered to your door, pay on delivery</span></h3>
+        <p data-l="ku">لە ماوەی <bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> ڕۆژدا دەگات. پاکەتەکەت لەبەردەم شۆفێرەکە بپشکنە و پارەکە بە کاش بدە.</p><p data-l="ar">يصل خلال <bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> يومًا. افحص طردك أمام المندوب وادفع نقدًا.</p><p data-l="en">Arrives in <bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> days. Check your parcel in front of the driver and pay in cash.</p></li>
+    </ol>
+    <p class="btn-row" style="margin-top:32px"><a class="btn btn--outline" href="how-it-works.html"><span data-l="ku">وردەکاریی زیاتر</span><span data-l="ar">تفاصيل أكثر</span><span data-l="en">See the full process</span></a></p>
+  </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="section" id="categories" aria-labelledby="cat-title">
+  <div class="container">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">بەشەکان</span><span data-l="ar">الأقسام</span><span data-l="en">Categories</span></p>
+  <h2><span id="cat-title"><span data-l="ku">هەموو بەشەکانی بازاڕ</span><span data-l="ar">كل أقسام السوق</span><span data-l="en">Every corner of the bazaar</span></span></h2>
+  <p class="lead"><span data-l="ku">جلوبەرگی ژنان، پیاوان و منداڵان، کەلوپەلی ماڵ، جوانکاری و ئێکسسوار — هەمووی لە یەک شوێن.</span><span data-l="ar">ملابس النساء والرجال والأطفال، أدوات المنزل، الجمال والإكسسوارات — كلها في مكان واحد.</span><span data-l="en">Fashion for women, men and kids, home, beauty and accessories — all in one place.</span></p>
+</div>
+    <div class="cats">
+      <!-- Replace the image: put your photo in /assets/img/categories/ and change src (e.g. women.jpg) -->
+      <div class="cat reveal">
+        <div class="cat-media"><img src="assets/img/categories/women.svg" width="400" height="500" alt="Women — ژنان" loading="lazy"></div>
+        <h3><span data-l="ku">ژنان</span><span data-l="ar">نسائي</span><span data-l="en">Women</span></h3>
+      </div>
+      <!-- Replace the image: put your photo in /assets/img/categories/ and change src (e.g. men.jpg) -->
+      <div class="cat reveal">
+        <div class="cat-media"><img src="assets/img/categories/men.svg" width="400" height="500" alt="Men — پیاوان" loading="lazy"></div>
+        <h3><span data-l="ku">پیاوان</span><span data-l="ar">رجالي</span><span data-l="en">Men</span></h3>
+      </div>
+      <!-- Replace the image: put your photo in /assets/img/categories/ and change src (e.g. kids.jpg) -->
+      <div class="cat reveal">
+        <div class="cat-media"><img src="assets/img/categories/kids.svg" width="400" height="500" alt="Kids & baby — منداڵان و کۆرپە" loading="lazy"></div>
+        <h3><span data-l="ku">منداڵان و کۆرپە</span><span data-l="ar">أطفال ورضّع</span><span data-l="en">Kids & baby</span></h3>
+      </div>
+      <!-- Replace the image: put your photo in /assets/img/categories/ and change src (e.g. home.jpg) -->
+      <div class="cat reveal">
+        <div class="cat-media"><img src="assets/img/categories/home.svg" width="400" height="500" alt="Home & kitchen — ماڵ و چێشتخانە" loading="lazy"></div>
+        <h3><span data-l="ku">ماڵ و چێشتخانە</span><span data-l="ar">المنزل والمطبخ</span><span data-l="en">Home & kitchen</span></h3>
+      </div>
+      <!-- Replace the image: put your photo in /assets/img/categories/ and change src (e.g. beauty.jpg) -->
+      <div class="cat reveal">
+        <div class="cat-media"><img src="assets/img/categories/beauty.svg" width="400" height="500" alt="Beauty — جوانکاری" loading="lazy"></div>
+        <h3><span data-l="ku">جوانکاری</span><span data-l="ar">الجمال والعناية</span><span data-l="en">Beauty</span></h3>
+      </div>
+      <!-- Replace the image: put your photo in /assets/img/categories/ and change src (e.g. accessories.jpg) -->
+      <div class="cat reveal">
+        <div class="cat-media"><img src="assets/img/categories/accessories.svg" width="400" height="500" alt="Accessories — ئێکسسوار" loading="lazy"></div>
+        <h3><span data-l="ku">ئێکسسوار</span><span data-l="ar">إكسسوارات</span><span data-l="en">Accessories</span></h3>
+      </div>
+    </div>
+    <p class="note" data-l="ku">کاڵاکان خۆت لە SHEIN هەڵیاندەبژێریت — ئێمە بۆت دەکڕین و تا دەرگا دەیگەیەنین.</p><p class="note" data-l="ar">أنت تختار المنتجات من SHEIN — ونحن نشتريها ونوصلها إلى بابك.</p><p class="note" data-l="en">You choose the items on SHEIN — we buy them and deliver them to your door.</p>
+  </div>
+</section>
+
+<!-- ================= CALCULATOR ================= -->
+<section class="section section--ivory section--line" id="calculator" aria-labelledby="calc-title">
+  <div class="container">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">هەژمارکەری نرخ</span><span data-l="ar">حاسبة السعر</span><span data-l="en">Price calculator</span></p>
+  <h2><span id="calc-title"><span data-l="ku">پێش داواکردن نرخەکەت بزانە</span><span data-l="ar">اعرف السعر قبل الطلب</span><span data-l="en">Know your price before you order</span></span></h2>
+  <p class="lead"><span data-l="ku">کۆی سەبەتەکەت لە SHEIN بە دۆلار بنووسە و ناوچەکەت هەڵبژێرە.</span><span data-l="ar">اكتب مجموع سلتك في SHEIN بالدولار واختر منطقتك.</span><span data-l="en">Enter your SHEIN basket total in USD and choose your area.</span></p>
+</div>
+    <div class="calc reveal">
+      <form class="card" id="calc-form" novalidate>
+        <label class="field" for="calc-usd">
+          <span><span data-l="ku">کۆی سەبەتەی SHEIN (دۆلار)</span><span data-l="ar">مجموع سلة SHEIN (دولار)</span><span data-l="en">SHEIN basket total (USD)</span></span>
+          <span class="input-wrap" style="display:block">
+            <span class="input-prefix" aria-hidden="true">$</span>
+            <input class="input input--usd" id="calc-usd" name="usd" type="number" inputmode="decimal" min="0" step="0.01" value="100" placeholder="100" data-i18n-ph="calc.placeholder">
+          </span>
+        </label>
+        <fieldset>
+          <legend><span data-l="ku">ناوچەی گەیاندن</span><span data-l="ar">منطقة التوصيل</span><span data-l="en">Delivery area</span></legend>
+          <div class="seg">
+            <label><input type="radio" name="area" value="kurdistan" checked><span><span data-l="ku">هەرێمی کوردستان</span><span data-l="ar">إقليم كوردستان</span><span data-l="en">Kurdistan Region</span><small><bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> <span data-l="ku">دینار</span><span data-l="ar">دينار</span><span data-l="en">IQD</span></small></span></label>
+            <label><input type="radio" name="area" value="other"><span><span data-l="ku">شارێکی تری عێراق</span><span data-l="ar">مدينة أخرى في العراق</span><span data-l="en">Other Iraqi city</span><small><bdi dir="ltr" data-cfg="feeOther">7,000</bdi> <span data-l="ku">دینار</span><span data-l="ar">دينار</span><span data-l="en">IQD</span></small></span></label>
+          </div>
+        </fieldset>
+        <p class="form-note" style="margin:0"><span data-l="ku">نرخ: <bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi> · گواستنەوەی بەخۆڕایی ئیمارات ← عێراق + تێچووی گەیاندن تا دەرگا (سەرەوە) · گومرگ لەسەر ئێمەیە.</span><span data-l="ar">السعر: <bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi> · شحن مجاني الإمارات ← العراق + رسوم التوصيل إلى الباب (أعلاه) · الجمارك علينا.</span><span data-l="en">Rate: <bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi> · Free shipping UAE → Iraq + paid door delivery (above) · Customs on us.</span></p>
+      </form>
+      <div class="calc-result" aria-live="polite">
+        <h3><span data-l="ku">خەمڵاندنی نرخەکەت</span><span data-l="ar">السعر التقديري</span><span data-l="en">Your estimate</span></h3>
+        <ul class="calc-lines">
+          <li><span><span data-l="ku">نرخی کاڵاکان</span><span data-l="ar">سعر المنتجات</span><span data-l="en">Items</span> <small>(USD × <span data-cfg="rate">1,450</span>)</small></span><b id="out-items">145,000 دینار</b></li>
+          <li><span><span data-l="ku">گەیاندن تا بەردەم دەرگا</span><span data-l="ar">التوصيل إلى الباب</span><span data-l="en">Door delivery</span></span><b id="out-delivery">5,000 دینار</b></li>
+        </ul>
+        <div class="calc-total"><span><span data-l="ku">کۆی گشتی</span><span data-l="ar">المجموع الكلي</span><span data-l="en">Total</span></span><b id="out-total">150,000 دینار</b></div>
+        <p class="calc-split" id="out-split" hidden><span data-l="ku">پێشەکی</span><span data-l="ar">دفعة مقدمة</span><span data-l="en">Prepayment</span> <bdi>25%</bdi>: <b id="out-prepay">0</b> • <span data-l="ku">لە کاتی وەرگرتن</span><span data-l="ar">عند الاستلام</span><span data-l="en">On delivery</span>: <b id="out-rest">0</b></p>
+        <p class="calc-split" id="out-noprepay"><span data-l="ku">هیچ پێشەکییەک نییە — هەمووی لە کاتی وەرگرتن دەدرێت.</span><span data-l="ar">لا توجد دفعة مقدمة — المبلغ كله يُدفع عند الاستلام.</span><span data-l="en">No prepayment — everything is paid on delivery.</span></p>
+        <p class="calc-note"><span data-l="ku">نرخی کۆتایی پێش کڕین لە واتسئاپ پشتڕاست دەکرێتەوە.</span><span data-l="ar">يتم تأكيد السعر النهائي عبر واتساب قبل الشراء.</span><span data-l="en">Final price is confirmed on WhatsApp before we purchase.</span></p>
+        <a class="btn btn--light btn--block" id="calc-wa" href="https://wa.me/9647509240950" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 11.6a8.4 8.4 0 0 1-12.5 7.3L3.4 20l1.2-4.1a8.4 8.4 0 1 1 15.6-4.3z"/><path d="M9 8.3c-.1 3.6 3 6.8 6.6 6.7l.9-1.5-2-1.1-1 .8a4.6 4.6 0 0 1-2.3-2.3l.8-1-1-2.1L9 8.3z"/></svg><span data-l="ku">ناردنی ئەم هەژمارە بۆ واتسئاپ</span><span data-l="ar">أرسل هذا الحساب عبر واتساب</span><span data-l="en">Send this breakdown on WhatsApp</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEES ================= -->
+<section class="section" id="fees" aria-labelledby="fees-title">
+  <div class="container">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">تێچووەکان</span><span data-l="ar">الرسوم</span><span data-l="en">Fees</span></p>
+  <h2><span id="fees-title"><span data-l="ku">تێچووی ڕوون، بێ سەرسوڕمان</span><span data-l="ar">رسوم واضحة، بلا مفاجآت</span><span data-l="en">Clear fees, no surprises</span></span></h2>
+
+</div>
+    <div class="card fees reveal">
+      <ul class="fee-list">
+        <li><span class="fee-name"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 6h11v10h-11z"/><path d="M13.5 9h4l3 3.2V16h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span data-l="ku">گواستنەوەی نێودەوڵەتی ئیمارات ← عێراق</span><span data-l="ar">الشحن الدولي الإمارات ← العراق</span><span data-l="en">International shipping UAE → Iraq</span></span><span class="fee-val"><span data-l="ku">بەخۆڕایی</span><span data-l="ar">مجاني</span><span data-l="en">Free</span></span></li>
+        <li><span class="fee-name"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 11L12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-6h4v6"/></svg><span data-l="ku">گەیاندن تا دەرگا — هەرێمی کوردستان</span><span data-l="ar">التوصيل إلى الباب — إقليم كوردستان</span><span data-l="en">Door delivery — Kurdistan Region</span></span><span class="fee-val"><bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> <span data-l="ku">دینار</span><span data-l="ar">دينار</span><span data-l="en">IQD</span></span></li>
+        <li><span class="fee-name"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 11L12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-6h4v6"/></svg><span data-l="ku">گەیاندن تا دەرگا — شارەکانی تری عێراق</span><span data-l="ar">التوصيل إلى الباب — باقي مدن العراق</span><span data-l="en">Door delivery — other Iraqi cities</span></span><span class="fee-val"><bdi dir="ltr" data-cfg="feeOther">7,000</bdi> <span data-l="ku">دینار</span><span data-l="ar">دينار</span><span data-l="en">IQD</span></span></li>
+        <li><span class="fee-name"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.6-3.4 8-8 9-4.6-1-8-4.4-8-9V6l8-3z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.8"/></svg><span data-l="ku">گومرگ</span><span data-l="ar">التخليص الجمركي</span><span data-l="en">Customs clearance</span></span><span class="fee-val"><span data-l="ku">لەسەر ئێمە</span><span data-l="ar">علينا</span><span data-l="en">On us</span></span></li>
+      </ul>
+    </div>
+    <p class="note" data-l="ku">بێ پێشەکی بۆ داواکارییەکانی تا <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi>. سەرووی <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi>: <bdi>25%</bdi> پێشەکی و <bdi>75%</bdi> لە کاتی وەرگرتن. <a href="shipping.html">سیاسەتی گەیاندن</a></p><p class="note" data-l="ar">بدون دفعة مقدمة للطلبات حتى <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi>. فوق <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi>: <bdi>25%</bdi> مقدمًا و<bdi>75%</bdi> عند الاستلام. <a href="shipping.html">سياسة الشحن</a></p><p class="note" data-l="en">No prepayment for orders up to <bdi>$<bdi dir="ltr" data-cfg="threshold">300</bdi></bdi>. Above <bdi>$<bdi dir="ltr" data-cfg="threshold">300</bdi></bdi>: 25% in advance and 75% on delivery. <a href="shipping.html">Shipping policy</a></p>
+  </div>
+</section>
+
+<!-- ================= SIZE GUIDE ================= -->
+<section class="section section--ivory section--line" id="sizes" aria-labelledby="size-title">
+  <div class="container container--narrow">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">ڕێبەری قەبارە</span><span data-l="ar">دليل المقاسات</span><span data-l="en">Size guide</span></p>
+  <h2><span id="size-title"><span data-l="ku">قەبارەی گونجاو بدۆزەرەوە</span><span data-l="ar">اعثر على مقاسك المناسب</span><span data-l="en">Find your size</span></span></h2>
+  <p class="lead"><span data-l="ku">پێوانەکان بە سانتیمەترن و ڕێبەرێکی گشتین.</span><span data-l="ar">القياسات بالسنتيمتر وهي دليل عام.</span><span data-l="en">Measurements are in centimetres and are a general guide.</span></p>
+</div>
+    <div class="tabs" role="tablist" aria-label="Size guide">
+      <button class="tab" type="button" role="tab" id="tab-women" aria-controls="panel-women" aria-selected="true"><span data-l="ku">ژنان</span><span data-l="ar">نسائي</span><span data-l="en">Women</span></button>
+      <button class="tab" type="button" role="tab" id="tab-men" aria-controls="panel-men" aria-selected="false" tabindex="-1"><span data-l="ku">پیاوان</span><span data-l="ar">رجالي</span><span data-l="en">Men</span></button>
+      <button class="tab" type="button" role="tab" id="tab-kids" aria-controls="panel-kids" aria-selected="false" tabindex="-1"><span data-l="ku">منداڵان</span><span data-l="ar">أطفال</span><span data-l="en">Kids</span></button>
+    </div>
+    <div class="tab-panel reveal" id="panel-women" role="tabpanel" aria-labelledby="tab-women">
+      <h3 class="visually-hidden"><span data-l="ku">ژنان</span><span data-l="ar">نسائي</span><span data-l="en">Women</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col"><span data-l="ku">قەبارە</span><span data-l="ar">المقاس</span><span data-l="en">Size</span></th><th scope="col"><span data-l="ku">سنگ (سم)</span><span data-l="ar">الصدر (سم)</span><span data-l="en">Bust (cm)</span></th><th scope="col"><span data-l="ku">کەمەر (سم)</span><span data-l="ar">الخصر (سم)</span><span data-l="en">Waist (cm)</span></th><th scope="col"><span data-l="ku">سمت (سم)</span><span data-l="ar">الورك (سم)</span><span data-l="en">Hip (cm)</span></th></tr></thead>
+        <tbody>
+            <tr><th scope="row">XS</th><td><bdi>80–84</bdi></td><td><bdi>62–66</bdi></td><td><bdi>86–90</bdi></td></tr>
+            <tr><th scope="row">S</th><td><bdi>84–88</bdi></td><td><bdi>66–70</bdi></td><td><bdi>90–94</bdi></td></tr>
+            <tr><th scope="row">M</th><td><bdi>88–92</bdi></td><td><bdi>70–74</bdi></td><td><bdi>94–98</bdi></td></tr>
+            <tr><th scope="row">L</th><td><bdi>92–98</bdi></td><td><bdi>74–80</bdi></td><td><bdi>98–104</bdi></td></tr>
+            <tr><th scope="row">XL</th><td><bdi>98–104</bdi></td><td><bdi>80–86</bdi></td><td><bdi>104–110</bdi></td></tr>
+            <tr><th scope="row">XXL</th><td><bdi>104–110</bdi></td><td><bdi>86–92</bdi></td><td><bdi>110–116</bdi></td></tr>
+        </tbody></table></div>
+    </div>
+    <div class="tab-panel" id="panel-men" role="tabpanel" aria-labelledby="tab-men">
+      <h3 class="visually-hidden"><span data-l="ku">پیاوان</span><span data-l="ar">رجالي</span><span data-l="en">Men</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col"><span data-l="ku">قەبارە</span><span data-l="ar">المقاس</span><span data-l="en">Size</span></th><th scope="col"><span data-l="ku">سنگ (سم)</span><span data-l="ar">الصدر (سم)</span><span data-l="en">Chest (cm)</span></th><th scope="col"><span data-l="ku">کەمەر (سم)</span><span data-l="ar">الخصر (سم)</span><span data-l="en">Waist (cm)</span></th><th scope="col"><span data-l="ku">سمت (سم)</span><span data-l="ar">الورك (سم)</span><span data-l="en">Hip (cm)</span></th></tr></thead>
+        <tbody>
+            <tr><th scope="row">XS</th><td><bdi>84–88</bdi></td><td><bdi>70–74</bdi></td><td><bdi>86–90</bdi></td></tr>
+            <tr><th scope="row">S</th><td><bdi>88–94</bdi></td><td><bdi>74–80</bdi></td><td><bdi>90–96</bdi></td></tr>
+            <tr><th scope="row">M</th><td><bdi>94–100</bdi></td><td><bdi>80–86</bdi></td><td><bdi>96–102</bdi></td></tr>
+            <tr><th scope="row">L</th><td><bdi>100–106</bdi></td><td><bdi>86–92</bdi></td><td><bdi>102–108</bdi></td></tr>
+            <tr><th scope="row">XL</th><td><bdi>106–112</bdi></td><td><bdi>92–98</bdi></td><td><bdi>108–114</bdi></td></tr>
+            <tr><th scope="row">XXL</th><td><bdi>112–118</bdi></td><td><bdi>98–104</bdi></td><td><bdi>114–120</bdi></td></tr>
+        </tbody></table></div>
+    </div>
+    <div class="tab-panel" id="panel-kids" role="tabpanel" aria-labelledby="tab-kids">
+      <h3 class="visually-hidden"><span data-l="ku">منداڵان</span><span data-l="ar">أطفال</span><span data-l="en">Kids</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col"><span data-l="ku">تەمەن</span><span data-l="ar">العمر</span><span data-l="en">Age</span></th><th scope="col"><span data-l="ku">باڵا (سم)</span><span data-l="ar">الطول (سم)</span><span data-l="en">Height (cm)</span></th></tr></thead>
+        <tbody>
+            <tr><th scope="row"><bdi>0–3</bdi> <span data-l="ku">مانگ</span><span data-l="ar">أشهر</span><span data-l="en">months</span></th><td><bdi>56–62</bdi></td></tr>
+            <tr><th scope="row"><bdi>3–6</bdi> <span data-l="ku">مانگ</span><span data-l="ar">أشهر</span><span data-l="en">months</span></th><td><bdi>62–68</bdi></td></tr>
+            <tr><th scope="row"><bdi>6–12</bdi> <span data-l="ku">مانگ</span><span data-l="ar">أشهر</span><span data-l="en">months</span></th><td><bdi>68–80</bdi></td></tr>
+            <tr><th scope="row"><bdi>1–2</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>80–92</bdi></td></tr>
+            <tr><th scope="row"><bdi>2–3</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>92–98</bdi></td></tr>
+            <tr><th scope="row"><bdi>3–4</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>98–104</bdi></td></tr>
+            <tr><th scope="row"><bdi>4–5</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>104–110</bdi></td></tr>
+            <tr><th scope="row"><bdi>5–6</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>110–116</bdi></td></tr>
+            <tr><th scope="row"><bdi>7–8</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>122–128</bdi></td></tr>
+            <tr><th scope="row"><bdi>9–10</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>134–140</bdi></td></tr>
+            <tr><th scope="row"><bdi>11–12</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>146–152</bdi></td></tr>
+            <tr><th scope="row"><bdi>13–14</bdi> <span data-l="ku">ساڵ</span><span data-l="ar">سنوات</span><span data-l="en">years</span></th><td><bdi>158–164</bdi></td></tr>
+        </tbody></table></div>
+    </div>
+    <p class="note" data-l="ku">قەبارەکان لە کاڵایەکەوە بۆ کاڵایەکی تر جیاوازن، بۆیە هەمیشە بەراوردی بکە لەگەڵ خشتەی قەبارەی سەر پەڕەی کاڵاکە لە SHEIN.</p><p class="note" data-l="ar">تختلف المقاسات من منتج لآخر، لذا قارن دائمًا مع جدول المقاسات في صفحة المنتج على SHEIN.</p><p class="note" data-l="en">Sizes vary between products, so always compare with the size chart on the SHEIN product page.</p>
+    <p class="btn-row" style="margin-top:18px"><a class="btn btn--primary" data-wa="size" href="https://wa.me/9647509240950"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 16.5L16.5 3.5l4 4-13 13z"/><path d="M7.5 12.5l2 2M10.5 9.5l2 2M13.5 6.5l2 2"/></svg><span data-l="ku">دڵنیا نیت لە قەبارەکەت؟ نامەمان بۆ بنێرە</span><span data-l="ar">غير متأكد من مقاسك؟ راسلنا</span><span data-l="en">Not sure about your size? Message us</span></a></p>
+  </div>
+</section>
+
+<!-- ================= CUSTOMER FEEDBACK (placeholders) ================= -->
+<section class="section" id="feedback" aria-labelledby="fb-title">
+  <div class="container">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">ڕای کڕیاران</span><span data-l="ar">آراء العملاء</span><span data-l="en">Customer feedback</span></p>
+  <h2><span id="fb-title"><span data-l="ku">کڕیارەکانمان چی دەڵێن</span><span data-l="ar">ماذا يقول عملاؤنا</span><span data-l="en">What our customers say</span></span></h2>
+
+</div>
+    <div class="reviews">
+      <!-- PLACEHOLDER: replace [Feedback], [Name] and [City] with a REAL customer review (with permission). Do not invent reviews. -->
+      <figure class="review reveal">
+        <span class="placeholder-tag"><span data-l="ku">نموونە — بگۆڕە</span><span data-l="ar">نموذج — للاستبدال</span><span data-l="en">Placeholder — replace</span></span>
+        <blockquote>[Feedback]</blockquote>
+        <footer>[Name] · [City]</footer>
+      </figure>
+      <!-- PLACEHOLDER: replace [Feedback], [Name] and [City] with a REAL customer review (with permission). Do not invent reviews. -->
+      <figure class="review reveal">
+        <span class="placeholder-tag"><span data-l="ku">نموونە — بگۆڕە</span><span data-l="ar">نموذج — للاستبدال</span><span data-l="en">Placeholder — replace</span></span>
+        <blockquote>[Feedback]</blockquote>
+        <footer>[Name] · [City]</footer>
+      </figure>
+      <!-- PLACEHOLDER: replace [Feedback], [Name] and [City] with a REAL customer review (with permission). Do not invent reviews. -->
+      <figure class="review reveal">
+        <span class="placeholder-tag"><span data-l="ku">نموونە — بگۆڕە</span><span data-l="ar">نموذج — للاستبدال</span><span data-l="en">Placeholder — replace</span></span>
+        <blockquote>[Feedback]</blockquote>
+        <footer>[Name] · [City]</footer>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section section--ivory section--line" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">پرسیارە باوەکان</span><span data-l="ar">الأسئلة الشائعة</span><span data-l="en">FAQ</span></p>
+  <h2><span id="faq-title"><span data-l="ku">وەڵامی پرسیارەکانت</span><span data-l="ar">إجابات أسئلتك</span><span data-l="en">Your questions, answered</span></span></h2>
+
+</div>
+    <div class="faq reveal">
+    <details>
+      <summary><span data-l="ku">نرخی دۆلار چەندە؟</span><span data-l="ar">ما هو سعر الصرف؟</span><span data-l="en">What exchange rate do you use?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>نرخی ئێمە بریتییە لە <bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi> (بۆ نموونە <bdi>100$ = <bdi dir="ltr" data-cfg="rate100">145,000</bdi> IQD</bdi>). نرخی کاڵاکان = نرخی SHEIN لە کاتی کڕیندا × نرخی ئێمە. نرخەکە لەوانەیە بگۆڕێت، بەڵام ئەو کۆیەی تۆ لە واتسئاپ پشتڕاستی دەکەیتەوە کۆتاییە.</p></div>
+<div data-l="ar"><p>سعرنا هو <bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi> (مثلًا <bdi>100$ = <bdi dir="ltr" data-cfg="rate100">145,000</bdi> IQD</bdi>). سعر المنتجات = سعر SHEIN وقت الشراء × سعرنا. قد يتغير السعر، لكن المجموع الذي تؤكده على واتساب هو النهائي.</p></div>
+<div data-l="en"><p>Our rate is <bdi>1$ = <span data-cfg="rate">1,450</span> IQD</bdi> (for example <bdi>100$ = <bdi dir="ltr" data-cfg="rate100">145,000</bdi> IQD</bdi>). Item price = SHEIN price at the time of purchase × our rate. The rate may change, but the total you confirm on WhatsApp is final.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">چۆن پارە دەدەم؟</span><span data-l="ar">كيف أدفع؟</span><span data-l="en">How do I pay?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>تەنها پارەدان لە کاتی وەرگرتن (کاش). پارەکە دەدەیت بە شۆفێرەکە کاتێک داواکارییەکەت وەردەگریت.</p></div>
+<div data-l="ar"><p>الدفع عند الاستلام فقط (نقدًا). تدفع للمندوب عندما تستلم طلبك.</p></div>
+<div data-l="en"><p>Cash on delivery only. You pay the driver in cash when you receive your order.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">پێویستە پێشەکی پارە بدەم؟</span><span data-l="ar">هل يجب أن أدفع مقدمًا؟</span><span data-l="en">Do I need to pay anything in advance?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>بۆ داواکارییەکانی تا <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi> هیچ پێشەکییەک نییە. بۆ داواکارییەکانی سەرووی <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi>، <bdi>25%</bdi>ی کۆی گشتی پێشەکی دەدرێت (تەنها لە ڕێگەی کەناڵە فەرمییەکانمانەوە) و <bdi>75%</bdi>ی ماوە لە کاتی وەرگرتن.</p></div>
+<div data-l="ar"><p>لا توجد دفعة مقدمة للطلبات حتى <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi>. للطلبات التي تزيد على <bdi><bdi dir="ltr" data-cfg="threshold">300</bdi>$</bdi> تُدفع <bdi>25%</bdi> من المجموع مقدمًا (عبر قنواتنا الرسمية فقط)، و<bdi>75%</bdi> الباقية عند الاستلام.</p></div>
+<div data-l="en"><p>No prepayment for orders up to <bdi>$<bdi dir="ltr" data-cfg="threshold">300</bdi></bdi>. For orders above <bdi>$<bdi dir="ltr" data-cfg="threshold">300</bdi></bdi>, 25% of the total is paid in advance (only through our official channels) and the remaining 75% is paid cash on delivery.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">گەیاندن چەند دەخایەنێت؟</span><span data-l="ar">كم تستغرق مدة التوصيل؟</span><span data-l="en">How long does delivery take?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>بە شێوەیەکی گشتی <bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> ڕۆژ. ئەمە خەمڵاندنە و گەرەنتی نییە، چونکە لەوانەیە گومرگ، گەشتە ئاسمانییەکان، پشووەکان یان کەشوهەوا کاری تێبکەن. لە ڕێگەی واتسئاپەوە ئاگادارت دەکەینەوە.</p></div>
+<div data-l="ar"><p>عادةً <bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> يومًا. هذه مدة تقديرية وليست مضمونة، فقد تتأثر بالجمارك والرحلات الجوية والعطل والطقس. نبقيك على اطلاع عبر واتساب.</p></div>
+<div data-l="en"><p>Usually <bdi dir="ltr" data-cfg="deliveryDays">15–25</bdi> days. This is an estimate, not a guarantee — customs, flights, holidays and weather can affect it. We keep you updated on WhatsApp.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">تێچووی گەیاندن چەندە؟</span><span data-l="ar">كم رسوم التوصيل؟</span><span data-l="en">How much is delivery?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>گواستنەوەی نێودەوڵەتی لە ئیماراتەوە بۆ عێراق بەخۆڕاییە. گەیاندن تا بەردەم دەرگا لە ناو عێراق: <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> دینار لە هەرێمی کوردستان و <bdi dir="ltr" data-cfg="feeOther">7,000</bdi> دینار لە شارەکانی تری عێراق.</p></div>
+<div data-l="ar"><p>الشحن الدولي من الإمارات إلى العراق مجاني. التوصيل إلى الباب داخل العراق: <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> دينار في إقليم كوردستان و<bdi dir="ltr" data-cfg="feeOther">7,000</bdi> دينار في باقي مدن العراق.</p></div>
+<div data-l="en"><p>International shipping from the UAE to Iraq is free. Door delivery inside Iraq is <bdi dir="ltr" data-cfg="feeKurdistan">5,000</bdi> IQD in the Kurdistan Region and <bdi dir="ltr" data-cfg="feeOther">7,000</bdi> IQD in other Iraqi cities.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">پێویستە گومرگ بدەم؟</span><span data-l="ar">هل أدفع الجمارك؟</span><span data-l="en">Do I pay customs?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>نەخێر. تێچووی گومرگ لەلایەن بێنە بازاڕەوە دەدرێت و تۆ هەرگیز گومرگ نادەیت.</p></div>
+<div data-l="ar"><p>لا. رسوم التخليص الجمركي تدفعها بينه بازار، ولن تدفع الجمارك أبدًا.</p></div>
+<div data-l="en"><p>No. Customs clearance is paid by Bena Bazar — you never pay customs.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">ئەگەر کاڵایەک نەمابێت چی دەبێت؟</span><span data-l="ar">ماذا لو كان المنتج غير متوفر؟</span><span data-l="en">What if an item is sold out?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>کاڵای نەماو لە داواکارییەکەت لادەبرێت، بە وێنەی شاشە نیشانت دەدەین و نرخەکە ڕێکدەخرێتەوە پێش ئەوەی تۆ کۆی کۆتایی پشتڕاست بکەیتەوە.</p></div>
+<div data-l="ar"><p>يُحذف المنتج النافد من طلبك، ونريك ذلك بلقطات شاشة، ويُعدَّل السعر قبل أن تؤكد المجموع النهائي.</p></div>
+<div data-l="en"><p>Sold-out items are removed from your order, we show them to you with screenshots, and the price is adjusted before you confirm the final total.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">ئەگەر قەبارەکە گونجاو نەبوو؟</span><span data-l="ar">ماذا لو كان المقاس غير مناسب؟</span><span data-l="en">What if the size is wrong?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>پارەگەڕاندنەوە بەردەستە ئەگەر کاڵاکە بەکارنەهاتبێت، نەشۆرابێت و تیکێت و پاکەتە ئەسڵییەکەی پێوە بێت. جلی ژێرەوە ناگەڕێندرێتەوە (بەهۆی پاکوخاوێنی). لە واتسئاپ پەیوەندیمان پێوە بکە. <a href="returns.html">سیاسەتی گەڕاندنەوە</a> ببینە.</p></div>
+<div data-l="ar"><p>يمكن استرداد المبلغ إذا كان المنتج غير مستخدم وغير مغسول ومعه البطاقات والتغليف الأصلي. الملابس الداخلية لا تُرجع (لأسباب صحية). تواصل معنا على واتساب. راجع <a href="returns.html">سياسة الإرجاع</a>.</p></div>
+<div data-l="en"><p>A refund is available if the item is unused, unwashed and has its original tags and packaging. Underwear cannot be returned (hygiene reasons). Contact us on WhatsApp. See our <a href="returns.html">returns policy</a>.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">دەتوانم داواکارییەکەم هەڵبوەشێنمەوە؟</span><span data-l="ar">هل يمكنني إلغاء طلبي؟</span><span data-l="en">Can I cancel my order?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>پێش ئەوەی ئێمە بیکڕین، هەڵوەشاندنەوە بەخۆڕاییە. دوای کڕین، هەڵوەشاندنەوە گەرەنتی نییە؛ هەوڵ دەدەین ئەگەر SHEIN هێشتا ڕێگە بدات، بەپێی هەر حاڵەتێک.</p></div>
+<div data-l="ar"><p>الإلغاء مجاني قبل أن نشتري الطلب. بعد الشراء، الإلغاء غير مضمون؛ نحاول إذا كانت SHEIN لا تزال تسمح بذلك، حسب كل حالة.</p></div>
+<div data-l="en"><p>Cancellation is free before we purchase. After purchase, cancellation is not guaranteed; we try when SHEIN still allows it, case by case.</p></div></div>
+    </details>
+    <details>
+      <summary><span data-l="ku">چۆن سەبەتەکەم بنێرم؟</span><span data-l="ar">كيف أرسل سلتي؟</span><span data-l="en">How do I send my basket?</span></summary>
+      <div class="faq-body"><div data-l="ku"><p>سەبەتەکەت لە SHEIN بکەرەوە و وێنەی شاشە بگرە بە شێوەیەک کە هەر کاڵایەک، قەبارە، ڕەنگ و نرخەکەی دیار بێت، یان لینکی کاڵاکان کۆپی بکە. پاشان لەگەڵ ناو، شار، ناونیشان و نزیکترین نیشانەی ناسراو بۆ واتسئاپی <bdi dir="ltr" data-cfg="phone.display">+964 750 924 0950</bdi>ی بنێرە.</p></div>
+<div data-l="ar"><p>افتح سلتك في SHEIN والتقط لقطات شاشة يظهر فيها كل منتج ومقاسه ولونه وسعره، أو انسخ روابط المنتجات. ثم أرسلها إلى واتساب <bdi dir="ltr" data-cfg="phone.display">+964 750 924 0950</bdi> مع اسمك ومدينتك وعنوانك وأقرب نقطة دالة.</p></div>
+<div data-l="en"><p>Open your SHEIN basket and take screenshots showing each item, its size, colour and price — or copy the product links. Send them to our WhatsApp <bdi dir="ltr" data-cfg="phone.display">+964 750 924 0950</bdi> together with your name, city, address and nearest landmark.</p></div></div>
+    </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STAY SAFE ================= -->
+<section class="section" aria-label="Stay safe">
+  <div class="container">
+
+<aside class="safe reveal" id="stay-safe" aria-labelledby="stay-safe-title">
+  <svg class="ico safe-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.6-3.4 8-8 9-4.6-1-8-4.4-8-9V6l8-3z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.8"/></svg>
+  <div>
+    <h2 id="stay-safe-title"><span data-l="ku">ئاگادار بە و خۆت بپارێزە</span><span data-l="ar">ابقَ آمنًا</span><span data-l="en">Stay safe</span></h2>
+    <p data-l="ku">ئێمە تەنها لە ڕێگەی واتسئاپی <bdi dir="ltr" data-cfg="phone.display">+964 750 924 0950</bdi>، ئینستاگرامی <bdi dir="ltr" data-cfg="social.instagramHandle">@bena.bazar</bdi> و پەڕەی فەرمیی فەیسبووکەکەمانەوە پەیوەندیت پێوە دەکەین. هەرگیز داوای ژمارەی کارتی بانکی، وشەی نهێنی یان کۆدی پشتڕاستکردنەوە ناکەین. پێشەکی تەنها بۆ داواکارییەکانی سەرووی <bdi dir="ltr" data-cfg="threshold">300</bdi> دۆلار داوا دەکرێت و تەنها لە ڕێگەی ئەم کەناڵە فەرمییانەوە. ئەگەر هەژمارێکی ساختەت بینی، ئاگادارمان بکەرەوە.</p>
+    <p data-l="ar">نتواصل معك فقط عبر واتساب <bdi dir="ltr" data-cfg="phone.display">+964 750 924 0950</bdi> وإنستغرام <bdi dir="ltr" data-cfg="social.instagramHandle">@bena.bazar</bdi> وصفحتنا الرسمية على فيسبوك. لا نطلب أبدًا أرقام البطاقات أو كلمات المرور أو رموز التحقق. الدفعة المقدمة تُطلب فقط للطلبات التي تزيد على <bdi dir="ltr" data-cfg="threshold">300</bdi> دولار، وفقط عبر هذه القنوات الرسمية. أبلغنا عن أي حساب مزيّف.</p>
+    <p data-l="en">We only contact you from WhatsApp <bdi dir="ltr" data-cfg="phone.display">+964 750 924 0950</bdi>, Instagram <bdi dir="ltr" data-cfg="social.instagramHandle">@bena.bazar</bdi> and our official Facebook page. We never ask for card numbers, passwords or verification codes. Prepayment is only requested for orders above $<bdi dir="ltr" data-cfg="threshold">300</bdi> and only through these official channels. Report fake accounts to us.</p>
+    <p class="btn-row" style="justify-content:flex-start;margin-top:14px">
+      <a class="btn btn--outline" data-wa="report" href="https://wa.me/9647509240950"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 11.6a8.4 8.4 0 0 1-12.5 7.3L3.4 20l1.2-4.1a8.4 8.4 0 1 1 15.6-4.3z"/><path d="M9 8.3c-.1 3.6 3 6.8 6.6 6.7l.9-1.5-2-1.1-1 .8a4.6 4.6 0 0 1-2.3-2.3l.8-1-1-2.1L9 8.3z"/></svg><span data-l="ku">ئاگادارکردنەوە لە هەژماری ساختە</span><span data-l="ar">الإبلاغ عن حساب مزيّف</span><span data-l="en">Report a fake account</span></a>
+    </p>
+  </div>
+</aside>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="section section--ivory section--line" id="location" aria-labelledby="loc-title">
+  <div class="container">
+
+<div class="section-head reveal">
+  <div class="ornament" aria-hidden="true"><svg viewBox="0 0 30 22"><path class="arc-path" d="M5 21V15.5a10 10 0 0 1 20 0V21"/></svg></div>
+  <p class="eyebrow"><span data-l="ku">شوێنەکەمان</span><span data-l="ar">موقعنا</span><span data-l="en">Visit us</span></p>
+  <h2><span id="loc-title"><span data-l="ku">نووسینگەکەمان لە هەولێر</span><span data-l="ar">مكتبنا في أربيل</span><span data-l="en">Our office in Erbil</span></span></h2>
+
+</div>
+    <div class="location">
+      <div class="map reveal">
+        <iframe data-map src="https://maps.google.com/maps?q=36.2004780,44.0392230&z=16&output=embed" title="Bena Bazar — Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div class="reveal">
+        <ul class="info-list">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong><span data-l="ku">ناونیشان</span><span data-l="ar">العنوان</span><span data-l="en">Address</span></strong><span data-cfg="address">شەقامی 40 مەتری، بڕایەتی، نزیک فارما، هەولێر، هەرێمی کوردستان، عێراق</span></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><div><strong><span data-l="ku">کاتی کارکردن</span><span data-l="ar">ساعات العمل</span><span data-l="en">Working hours</span></strong><span data-cfg="hours">شەممە تا پێنجشەممە، 09:00 – 18:00 · هەینی داخراوە</span></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.2 3.5h3l1.8 4.6-2.3 1.5a11 11 0 0 0 5.2 5.2l1.5-2.3 4.6 1.8v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2z"/></svg><div><strong><span data-l="ku">واتسئاپ و تەلەفۆن</span><span data-l="ar">واتساب والهاتف</span><span data-l="en">WhatsApp & phone</span></strong><a href="tel:+9647509240950" data-cfg-href="tel"><bdi dir="ltr" data-cfg="phone.display">+964 750 924 0950</bdi></a></div></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.6 6.2L12 13l8.4-6.8"/></svg><div><strong><span data-l="ku">ئیمەیڵ</span><span data-l="ar">البريد الإلكتروني</span><span data-l="en">Email</span></strong><a href="mailto:info@benabazar.com" data-cfg-href="email"><bdi dir="ltr" data-cfg="email">info@benabazar.com</bdi></a></div></li>
+        </ul>
+        <div class="btn-row" style="justify-content:flex-start">
+          <a class="btn btn--primary" href="https://www.google.com/maps?q=36.2004780,44.0392230" data-cfg-href="maps" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-l="ku">کردنەوە لە Google Maps</span><span data-l="ar">افتح في خرائط Google</span><span data-l="en">Open in Google Maps</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-cream.png" width="120" height="139" alt="Bena Bazar — بێنە بازاڕ" loading="lazy">
+        <p data-l="ku">خزمەتگوزارییەکی سەربەخۆی کڕینی کەسی لە هەولێر. تۆ لە SHEIN هەڵدەبژێریت، ئێمە بۆت دەکڕین، لە ئیماراتەوە دەینێرین و تا بەردەم دەرگاکەت لە هەموو عێراق و هەرێمی کوردستان دەیگەیەنین.</p>
+        <p data-l="ar">خدمة تسوّق شخصي مستقلة في أربيل. أنت تختار من SHEIN، ونحن نشتري نيابةً عنك ونشحن من الإمارات ونوصل إلى باب بيتك في كل العراق وإقليم كوردستان.</p>
+        <p data-l="en">An independent personal-shopping service based in Erbil. You choose on SHEIN, we buy on your behalf, ship from the UAE and deliver to your door across Iraq and the Kurdistan Region.</p>
+        <div class="socials">
+          <a href="https://wa.me/9647509240950" data-wa="general" aria-label="WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 11.6a8.4 8.4 0 0 1-12.5 7.3L3.4 20l1.2-4.1a8.4 8.4 0 1 1 15.6-4.3z"/><path d="M9 8.3c-.1 3.6 3 6.8 6.6 6.7l.9-1.5-2-1.1-1 .8a4.6 4.6 0 0 1-2.3-2.3l.8-1-1-2.1L9 8.3z"/></svg></a>
+          <a href="https://www.instagram.com/bena.bazar" data-cfg-href="social.instagram" data-cfg-hide="social.instagram" target="_blank" rel="noopener" aria-label="Instagram @bena.bazar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a>
+          <a href="https://www.facebook.com/share/1BCmGrr11t/" data-cfg-href="social.facebook" data-cfg-hide="social.facebook" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 8.5H17V5h-2.5A4 4 0 0 0 10.5 9v2.5H8V15h2.5v6h3.5v-6h2.6l.6-3.5h-3.2V9.3c0-.5.3-.8.8-.8h-.3z"/></svg></a>
+        </div>
+      </div>
+      <nav aria-label="Footer">
+        <h2><span data-l="ku">پەڕەکان</span><span data-l="ar">روابط</span><span data-l="en">Explore</span></h2>
+        <ul class="footer-links">
+          <li><a href="about.html"><span data-l="ku">دەربارەی ئێمە</span><span data-l="ar">من نحن</span><span data-l="en">About</span></a></li>
+          <li><a href="how-it-works.html"><span data-l="ku">چۆن کار دەکات</span><span data-l="ar">كيف نعمل</span><span data-l="en">How it works</span></a></li>
+          <li><a href="shipping.html"><span data-l="ku">گەیاندن</span><span data-l="ar">الشحن والتوصيل</span><span data-l="en">Shipping</span></a></li>
+          <li><a href="returns.html"><span data-l="ku">گەڕاندنەوە</span><span data-l="ar">الإرجاع والاسترداد</span><span data-l="en">Returns</span></a></li>
+          <li><a href="privacy.html"><span data-l="ku">سیاسەتی تایبەتمەندی</span><span data-l="ar">سياسة الخصوصية</span><span data-l="en">Privacy Policy</span></a></li>
+          <li><a href="terms.html"><span data-l="ku">مەرجەکانی خزمەتگوزاری</span><span data-l="ar">شروط الخدمة</span><span data-l="en">Terms of Service</span></a></li>
+          <li><a href="contact.html"><span data-l="ku">پەیوەندی</span><span data-l="ar">اتصل بنا</span><span data-l="en">Contact</span></a></li>
+        </ul>
+        <p class="footer-safe"><a href="contact.html#stay-safe"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 4.6-3.4 8-8 9-4.6-1-8-4.4-8-9V6l8-3z"/><path d="M8.6 12.2l2.4 2.4 4.4-4.8"/></svg><span data-l="ku">ئاگادار بە و خۆت بپارێزە</span><span data-l="ar">ابقَ آمنًا</span><span data-l="en">Stay safe</span></a></p>
+      </nav>
+      <div>
+        <h2><span data-l="ku">پەیوەندی</span><span data-l="ar">تواصل معنا</span><span data-l="en">Contact</span></h2>
+        <ul class="footer-contact">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><a href="https://www.google.com/maps?q=36.2004780,44.0392230" data-cfg-href="maps" target="_blank" rel="noopener"><span data-cfg="address">شەقامی 40 مەتری، بڕایەتی، نزیک فارما، هەولێر، هەرێمی کوردستان، عێراق</span></a></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.2 3.5h3l1.8 4.6-2.3 1.5a11 11 0 0 0 5.2 5.2l1.5-2.3 4.6 1.8v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2z"/></svg><a href="tel:+9647509240950" data-cfg-href="tel"><bdi dir="ltr" data-cfg="phone.display">+964 750 924 0950</bdi></a></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.6 6.2L12 13l8.4-6.8"/></svg><a href="mailto:info@benabazar.com" data-cfg-href="email"><bdi dir="ltr" data-cfg="email">info@benabazar.com</bdi></a></li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><span data-cfg="hours">شەممە تا پێنجشەممە، 09:00 – 18:00 · هەینی داخراوە</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-l="ku">بێنە بازاڕ خزمەتگوزارییەکی سەربەخۆی کڕینە. ئێمە سەر بە کۆمپانیای SHEIN نین، لەلایەن ئەو کۆمپانیایەوە پەسەند نەکراوین و هاوبەشی نین. SHEIN نیشانەیەکی بازرگانییە و موڵکی خاوەنەکەیەتی.</p>
+      <p data-l="ar">بينه بازار خدمة تسوّق مستقلة. نحن لسنا تابعين لـ SHEIN ولا معتمدين منها ولا شركاء لها. SHEIN علامة تجارية مملوكة لصاحبها.</p>
+      <p data-l="en">Bena Bazar is an independent shopping service. We are not affiliated with, endorsed by, or partnered with SHEIN. SHEIN is a trademark of its respective owner.</p>
+      <p>© <span data-cfg="year">2026</span> <span data-l="ku">بێنە بازاڕ. هەموو مافەکان پارێزراون.</span><span data-l="ar">بينه بازار. جميع الحقوق محفوظة.</span><span data-l="en">Bena Bazar. All rights reserved.</span></p>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/9647509240950" data-wa="general" aria-label="WhatsApp" data-i18n-aria="ui.wa"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.2 11.6a8.4 8.4 0 0 1-12.5 7.3L3.4 20l1.2-4.1a8.4 8.4 0 1 1 15.6-4.3z"/><path d="M9 8.3c-.1 3.6 3 6.8 6.6 6.7l.9-1.5-2-1.1-1 .8a4.6 4.6 0 0 1-2.3-2.3l.8-1-1-2.1L9 8.3z"/></svg></a>
+<script src="assets/config.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/main.js"></script>
 </body>
-
 </html>
