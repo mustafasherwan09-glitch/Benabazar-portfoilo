@@ -529,6 +529,14 @@ html[dir="rtl"] .h3 { font-size: 1.12rem !important; }
 /* Footer stay-safe link */
 .footer-safe a { display: inline-flex; align-items: center; gap: 8px; }
 .footer-safe svg { width: 18px; height: 18px; color: var(--gold); }
+/* ---------- Legal information box + footer legal owner ---------- */
+.legal-info dl { margin: 0; }
+.legal-info dl > div { display: grid; grid-template-columns: minmax(110px, 38%) 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line-soft); }
+.legal-info dl > div:last-child { border-bottom: 0; }
+.legal-info dt { color: var(--muted); font-size: .9rem; }
+.legal-info dd { margin: 0; color: var(--text); font-weight: 500; word-break: break-word; }
+.legal-info dd a { text-decoration: none; }
+.footer-bottom .legal-owner { color: rgba(239, 230, 220, .9); }
 /* ==========================================================================
    Breakpoints
    ========================================================================== */
